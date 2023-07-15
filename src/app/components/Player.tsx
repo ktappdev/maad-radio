@@ -5,6 +5,7 @@ import ReactAudioPlayer from "react-audio-player";
 
 interface AudioPlayerProps {
   audioUrl: string;
+  //
 }
 
 const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl }) => {
