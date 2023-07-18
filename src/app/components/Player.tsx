@@ -110,7 +110,7 @@ const Schedule: React.FC = () => {
   };
 
   return (
-    <div className="audio-player-container bg-gradient-to-r from-[#EDE0D4] to-[#FD7B2B] rounded-lg p-2 w-full">
+    <div id="#home" className="audio-player-container bg-gradient-to-r from-[#EDE0D4] to-[#FD7B2B] rounded-lg p-2 w-full md:w-1/2 mx-auto">
       <div className="current-show flex flex-col items-center justify-center p-4">
         <div className="flex">
           {currentShow ? (
