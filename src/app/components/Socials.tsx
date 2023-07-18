@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const ContactSection = () => {
   const socialHandles = [
     {
@@ -35,9 +35,9 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3  w-1/2 md:1/12 mb-8">
+    <div className="grid grid-cols-3  w-1/2 md:1/12">
       {socialHandles.map((social) => (
-        <a
+        <Link
           key={social.name}
           href={`https://www.${social.name.toLowerCase()}.com/${social.handle}`}
           target="_blank"
@@ -46,7 +46,7 @@ const ContactSection = () => {
         >
           <img src={social.logo} alt={social.name} className="w-12 h-12" />
           {/* {social.name} */}
-        </a>
+        </Link>
       ))}
     </div>
   );

@@ -31,6 +31,12 @@ const Schedule: React.FC = () => {
       image: "https://i.pravatar.cc/200?img=32",
     },
     {
+      title: "Farrakhan",
+      time: "02:00 PM - 03:00 PM",
+      host: "Min. Louis Farrakhan",
+      image: "/farrakhan.jpeg",
+    },
+    {
       title: "Rush Hour Drive",
       time: "03:00 PM - 06:00 PM",
       host: "N.E.B 592",
@@ -121,7 +127,7 @@ const Schedule: React.FC = () => {
               </div>
             </>
           ) : (
-            <p>No show currently playing</p>
+            <p>No show - Music</p>
           )}
         </div>
         <ReactAudioPlayer
