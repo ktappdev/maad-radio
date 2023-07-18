@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 const Schedule = () => {
   // Dummy data for programs (replace with your actual program data)
   const programs = [
@@ -41,7 +41,7 @@ const Schedule = () => {
     },
   ];
 
-  const getBgColor = (index) => {
+  const getBgColor = (index: any) => {
     const colors = [
       "bg-blue-200",
       "bg-yellow-200",
@@ -55,7 +55,7 @@ const Schedule = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-      {programs.map((program, index) => (
+      {programs.map((program: any, index: any) => (
         <div
           key={index}
           className={`shadow-md p-4 rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg ${getBgColor(
@@ -66,9 +66,11 @@ const Schedule = () => {
             <div className="font-bold">{program.title}</div>
             <div className="text-gray-500">{program.time}</div>
           </div>
-          <img
+          <Image
             src={program.image}
             alt={program.title}
+            width={200}
+            height={200}
             className="w-full h-32 object-cover mb-2 rounded-md"
           />
           <div className="text-sm text-gray-600">Hosted by: {program.host}</div>
