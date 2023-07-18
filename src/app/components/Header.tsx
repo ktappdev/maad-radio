@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex justify-center w-full text-white gap-8 pt-8">
+    <div className="flex justify-center items-center w-full text-white gap-8 py-4">
       <a href="#home" className="hover:text-green-600">
-        Home
+        <Image src="/logo.png" alt="logo" width={40} height={40} />
       </a>
       <a href="#schedule" className="hover:text-green-600">
         Schedule

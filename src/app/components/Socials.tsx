@@ -35,7 +35,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3  w-1/2 md:1/12">
+    <div id="contact" className="grid grid-cols-3  w-1/2 md:1/12">
       {socialHandles.map((social) => (
         <Link
           key={social.name}

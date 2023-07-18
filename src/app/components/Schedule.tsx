@@ -55,8 +55,11 @@ const Schedule = () => {
 
   return (
     <>
-      <h1 className="font-extrabold text-3xl  text-[#EDE0D4] text-center tracking-widest">
-        SHOWS
+      <h1
+        id="schedule"
+        className="font-extrabold text-3xl  text-[#EDE0D4] text-center tracking-widest"
+      >
+        FEATURED SHOWS
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
@@ -68,19 +71,26 @@ const Schedule = () => {
             )}`}
           >
             <div className="flex items-center justify-between mb-2">
-              <div className="font-bold">{program.title}</div>
-              <div className="text-gray-500">{program.time}</div>
+              {/* <div className="font-bold p-1">{program.title}</div> */}
+              <div className="text-gray-500 p-1 text-center w-full">
+                {program.time}
+              </div>
             </div>
             <Image
               src={program.image}
               alt={program.title}
-              width={200}
-              height={200}
-              className="w-full h-32 object-cover mb-2 rounded-md"
+              width={150}
+              height={150}
+              className="w-full h-auto object-cover mb-2 rounded-md"
             />
-            <div className="text-sm text-gray-600">
-              Hosted by: {program.host}
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+              <div className="w-full h-4/6 flex justify-end items-center flex-col">
+                <p className="text-white bg-neutral-700 opacity-70 rounded-lg px-2 text-lg sm:text-xl  font-semibold tracking-tight text-center">
+                  {program.title}
+                </p>
+              </div>
             </div>
+            <div className="text-sm text-gray-600">{program.host}</div>
           </div>
         ))}
       </div>

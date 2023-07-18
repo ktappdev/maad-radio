@@ -14,7 +14,7 @@ export default function Home() {
       
       <Schedule />
       <Banner text="STAY TUNED" text2="" />
-      <div className="flex w-full flex-col sm:flex-row justify-between gap-4 items-center">
+      <div className="flex w-full flex-col sm:flex-row justify-between gap-4 items-center px-12">
         <Youtube videoId={"SjQh0x5AYCw"} />
         <MailingList />
       </div>
