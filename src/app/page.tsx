@@ -1,6 +1,6 @@
 import Banner from "./components/Banner";
 import BannerImage from "./components/BannerImage";
-import MailingList from "./components/MailingList";
+import MailingList from "./components/Socials";
 import Player from "./components/Player";
 import Schedule from "./components/Schedule";
 import Shows from "./components/Shows";
@@ -11,16 +11,7 @@ export default function Home() {
     <main className="flex w-full min-h-screen flex-col items-center  py-8 px-4 gap-4">
       <Banner text="MAAD 97.5 FM" text2="IS WE OWN" />
       <BannerImage />
-      <div>
-        <p className=" text-xl md:text-4xl text-white font-semibold tracking-wider text-center">
-          Welcome to MAAD 97.5 FM, the Maddest online radio station on the
-          internet!
-          {/* <p className="text-base font-light">
-            We are the home of the freshest tunes, the craziest DJs, and the
-            most unforgettable memories you will ever make.
-          </p> */}
-        </p>
-      </div>
+      
       <Schedule />
       <Banner text="STAY TUNED" text2="" />
       <div className="flex w-full flex-col sm:flex-row justify-between gap-4 items-center">
