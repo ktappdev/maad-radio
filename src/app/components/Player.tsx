@@ -110,7 +110,10 @@ const Schedule: React.FC = () => {
   };
 
   return (
-    <div id="#home" className="audio-player-container bg-gradient-to-r from-[#EDE0D4] to-[#FD7B2B] rounded-lg p-2 w-full md:w-1/2 mx-auto">
+    <div
+      id="#home"
+      className="audio-player-container bg-gradient-to-r from-[#EDE0D4] to-[#FD7B2B] rounded-lg p-2 w-full md:w-1/2 mx-auto"
+    >
       <div className="current-show flex flex-col items-center justify-center p-4">
         <div className="flex">
           {currentShow ? (
@@ -132,13 +135,13 @@ const Schedule: React.FC = () => {
         </div>
         <ReactAudioPlayer
           src={"https://streaming.broadcastradio.com:8872/maad975fm"}
-          autoPlay={true}
+          autoPlay={false}
           controls
           listenInterval={10000}
           preload="metadata"
-          onCanPlay={() => console.log("Can play")}
-          onEnded={() => console.log("Playback ended")}
-          onError={(e: Event) => console.log("Error:", e)}
+          // onCanPlay={() => console.log("Can play")}
+          // onEnded={() => console.log("Playback ended")}
+          // onError={(e: Event) => console.log("Error:", e)}
           className="w-full rounded-lg p-4"
         />
       </div>
