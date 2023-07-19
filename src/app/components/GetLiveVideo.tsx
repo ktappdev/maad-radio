@@ -36,7 +36,7 @@ const GetLiveVideo = () => {
     };
 
     fetchIframe();
-  }, []);
+  });
 
   console.log(isLive);
   return (
@@ -47,6 +47,7 @@ const GetLiveVideo = () => {
         <script
           src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
           nonce="GLMKdyjM"
+          async
         ></script>
       ) : null}
 

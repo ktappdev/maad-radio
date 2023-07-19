@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 const ContactSection = () => {
   const socialHandles = [
     {
@@ -44,7 +45,13 @@ const ContactSection = () => {
           rel="noopener noreferrer"
           className="flex items-center justify-center  text-white"
         >
-          <img src={social.logo} alt={social.name} className="w-12 h-12" />
+          <Image
+            src={social.logo}
+            alt={social.name}
+            width={48}
+            height={48}
+            className="w-12 h-12"
+          />
           {/* {social.name} */}
         </Link>
       ))}
