@@ -38,7 +38,7 @@ const GetLiveVideo = () => {
     fetchIframe();
   });
 
-  console.log(isLive);
+  console.log(isLive, videoLink);
   return (
     <div className=" flex justify-center ">
       {isLive ? <div id="fb-root"></div> : null}
@@ -51,21 +51,12 @@ const GetLiveVideo = () => {
         ></script>
       ) : null}
 
-      {/* <div
-        className="fb-video"
-        data-href={"https://www.facebook.com/maad975/videos/" + videoLink}
-      >
-        <blockquote
-          cite={"https://www.facebook.com/maad975/videos/" + videoLink}
-          className="fb-xfbml-parse-ignore"
-        >
-          <a href={"https://www.facebook.com/maad975/videos/" + videoLink}>
-            The Rush Hour Drive/ NEB 592
-          </a>
-          Posted by <a href="https://www.facebook.com/maad975">MAAD 97.5FM</a>{" "}
-          on Wednesday, July 19, 2023
-        </blockquote>
-      </div> */}
+      {isLive ? (
+        <div
+          className="fb-video"
+          data-href={"https://www.facebook.com/maad975/videos/" + videoLink}
+        ></div>
+      ) : null}
     </div>
   );
 };

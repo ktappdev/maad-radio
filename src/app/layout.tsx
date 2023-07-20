@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Maad 97.5 FM",
   description: "Is We Own!",
+  // image: "/logo.png",
 };
 
 export default function RootLayout({
