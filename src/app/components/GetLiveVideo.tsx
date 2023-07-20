@@ -18,7 +18,7 @@ const GetLiveVideo = () => {
         const data = await res.json();
         setIframeHTML(data.data[0].embed_html);
         if (data.data[0].status === "LIVE") {
-          // console.log("live");
+          console.log("live");
           setIsLive(true);
           let iframe = data.data[0].embed_html.replace(/&amp;/g, "&");
           // console.log(data.data[0].embed_html.replace(/&amp;/g, "&"));
@@ -38,23 +38,26 @@ const GetLiveVideo = () => {
     fetchIframe();
   });
 
-  console.log(isLive, videoLink, iframeHTML);
+  // console.log(isLive);
   return (
-    <div className=" flex justify-center ">
-      {isLive ? <div id="fb-root"></div> : null}
+    <div>
+      <script
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
+        nonce="GLMKdyjM"
+        async
+      ></script>
 
-      {isLive ? (
-        <script
-          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
-          async
-        ></script>
-      ) : null}
-      {isLive ? <div className="fb-video" data-href={videoLink}></div> : null}
+      <div className="fb-video" data-href={videoLink}>
+        <blockquote cite={videoLink} className="fb-xfbml-parse-ignore">
+          <a href={videoLink}>The Rush Hour Drive/ NEB 592</a>
+          Posted by <a href="https://www.facebook.com/maad975">
+            MAAD 97.5FM
+          </a>{" "}
+          on Wednesday, July 19, 2023
+        </blockquote>
+      </div>
     </div>
   );
 };
 
 export default GetLiveVideo;
-
-//
-// possible blockquote and that href needs a slash at the end
