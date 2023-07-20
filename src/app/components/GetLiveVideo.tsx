@@ -39,7 +39,7 @@ const GetLiveVideo = () => {
 
   console.log(videoLink);
   return (
-    <div className="flex w-full">
+    <div className="flex justify-center items-center w-full">
       <script
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
         nonce="GLMKdyjM"
