@@ -10,7 +10,7 @@ export const ContactUs = () => {
     e.preventDefault();
     console.log(process.env.NEXT_PUBLIC_PUBLIC_KEY)
 
-    emailjs.sendForm(NEXT_PUBLIC_TEST_SERVICE_ID, NEXT_PUBLIC_TEMPLATE_ID, form.current, NEXT_PUBLIC_PUBLIC_KEY)
+    emailjs.sendForm(process.env.NEXT_PUBLIC_TEST_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
       .then((result) => {
         console.log(result.text);
       }, (error) => {
