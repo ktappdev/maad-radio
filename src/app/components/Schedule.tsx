@@ -60,7 +60,7 @@ const Schedule = () => {
   };
 
   return (
-    <>
+    <div className="w-full border-2 border-red-[#EDE0D4]">
       <h1
         id="schedule"
         className="font-extrabold text-3xl  text-[#EDE0D4] text-center tracking-widest"
@@ -97,7 +97,7 @@ const Schedule = () => {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
