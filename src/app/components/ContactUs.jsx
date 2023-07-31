@@ -72,7 +72,7 @@ export const ContactUs = () => {
       <div className="text-center">
         <button
           type="submit"
-          className="px-4 w-full py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          className="px-4 w-full py-2 bg-[#FD7B2B] text-white font-semibold rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
         >
           Send
         </button>
