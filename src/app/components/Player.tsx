@@ -94,13 +94,14 @@ const Schedule: React.FC = () => {
   };
 
   useEffect(() => {
-    setCurrentShow(getCurrentShow());
     const interval = setInterval(() => {
-      setCurrentShow(getCurrentShow());
+      const updatedShow = getCurrentShow(); // Make sure getCurrentShow() returns the updated value
+      setCurrentShow(updatedShow);
     }, 10000);
 
     return () => clearInterval(interval);
   });
+
 
   const getBgColor = (index: number): string => {
     const colors = [
