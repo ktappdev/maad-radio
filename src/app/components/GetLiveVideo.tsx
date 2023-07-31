@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 const GetLiveVideo = () => {
-  const [iframeHTML, setIframeHTML] = useState("");
+  // const [iframeHTML, setIframeHTML] = useState("");
   const [isLive, setIsLive] = useState(false);
   const [videoLink, setVideoLink] = useState("");
 
@@ -16,7 +16,7 @@ const GetLiveVideo = () => {
           cache: "no-cache",
         });
         const data = await res.json();
-        setIframeHTML(data.data[0].embed_html);
+        // setIframeHTML(data.data[0].embed_html);
         if (data.data[0].status === "LIVE") {
           console.log("live");
           setIsLive(true);
@@ -25,13 +25,13 @@ const GetLiveVideo = () => {
           let videoId = srcParts[srcParts.length - 1];
           setVideoLink(
             (value) =>
-              (value = `https://www.facebook.com/maad975/videos/${videoId.replace(
-                '"',
-                ""
-              )}`)
+            (value = `https://www.facebook.com/maad975/videos/${videoId.replace(
+              '"',
+              ""
+            )}`)
           );
         }
-      } catch (error) {}
+      } catch (error) { }
     };
 
     fetchIframe();
@@ -39,24 +39,20 @@ const GetLiveVideo = () => {
 
   console.log(videoLink);
   return (
-    <div className="flex justify-center items-center w-full">
-      <script
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
-        nonce="GLMKdyjM"
-        async
-      ></script>
+    <>
+      {isLive &&
+        <div className="flex justify-center items-center w-full">
+          <script
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
+            nonce="GLMKdyjM"
+            async
+          ></script>
 
-      <div className="fb-video" data-href={videoLink}>
-        {/* <blockquote cite={videoLink} className="fb-xfbml-parse-ignore">
-          <a href={videoLink}>The Rush Hour Drive/ NEB 592</a>
-          Posted by <a href="https://www.facebook.com/maad975">
-            MAAD 97.5FM
-          </a>{" "}
-          on Wednesday, July 19, 2023
-        </blockquote> */}
-      </div>
-    </div>
-  );
+          <div className="fb-video" data-href={videoLink}>
+          </div>
+        </div>}
+    </>
+  )
 };
 
 export default GetLiveVideo;

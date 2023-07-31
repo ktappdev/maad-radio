@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   description: "Is We Own!",
   // image: "/logo.png",
 };
-
 export default function RootLayout({
   children,
 }: {

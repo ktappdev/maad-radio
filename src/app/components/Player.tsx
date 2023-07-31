@@ -65,6 +65,11 @@ const Schedule: React.FC = () => {
 
   const getCurrentShow = (): Program | null => {
     const currentTime = new Date();
+    // if now is weekend then return null
+    if (currentTime.getDay() === 0 || currentTime.getDay() === 6) {
+      console.log('weekend so not returning any show for the player')
+      return null;
+    }
     const currentProgram = programs.find((program) => {
       const [startTimeStr, endTimeStr] = program.time.split(" - ");
       const startTime = parseTime(startTimeStr);
@@ -95,7 +100,7 @@ const Schedule: React.FC = () => {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, []);
+  });
 
   const getBgColor = (index: number): string => {
     const colors = [
@@ -130,7 +135,7 @@ const Schedule: React.FC = () => {
               </div>
             </>
           ) : (
-            <p>No show - Music</p>
+            <p>Maad 97.5FM is we own!</p>
           )}
         </div>
         <ReactAudioPlayer
