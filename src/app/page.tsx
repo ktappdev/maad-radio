@@ -1,7 +1,7 @@
 
 import Banner from "./components/Banner";
 import BannerImage from "./components/BannerImage";
-import Socials from "./components/Socials";
+import ContactSection from "./components/Socials";
 import Schedule from "./components/Schedule";
 import Youtube from "./components/Youtube";
 import GetLiveVideo from "./components/GetLiveVideo";
@@ -18,7 +18,7 @@ export default function Home() {
       <Banner text="STAY TUNED" text2="" />
       <div className="flex h-96 w-full flex-col  justify-between gap-4 items-center px-12">
         <Youtube videoId={"SjQh0x5AYCw"} />
-        {/* <Socials /> */}
+        <ContactSection />
       </div>
       <div className="flex w-full bg-[#333333] flex-col px-8 text-center text-lg font-bold">
         <div className="flex flex-col text-2xl w-full justify-center items-center text-white">
