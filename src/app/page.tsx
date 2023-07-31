@@ -16,9 +16,9 @@ export default function Home() {
 
       <Schedule />
       <Banner text="STAY TUNED" text2="" />
-      <div className="flex h-96 w-full flex-col  justify-between gap-4 items-center px-12">
+      <div className="flex h-60 w-full flex-col  justify-between gap-4 items-center px-8">
         <Youtube videoId={"SjQh0x5AYCw"} />
-        <ContactSection />
+
       </div>
       <div className="flex w-full bg-[#333333] flex-col px-8 text-center text-lg font-bold">
         <div className="flex flex-col text-2xl w-full justify-center items-center text-white">
@@ -33,6 +33,7 @@ export default function Home() {
         </div>
         <ContactUs />
       </div>
+      <ContactSection />
     </main>
   );
 }
