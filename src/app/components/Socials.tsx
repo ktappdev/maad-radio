@@ -46,13 +46,13 @@ const ContactSection = () => {
           className="flex items-center justify-center  text-white"
         >
           <Image
-            src={social.logo}
+            src={'/next.svg'}
             alt={social.name}
             width={48}
             height={48}
             className="w-12 h-12"
           />
-          {/* {social.name} */}
+          {social.name}
         </Link>
       ))}
     </div>
