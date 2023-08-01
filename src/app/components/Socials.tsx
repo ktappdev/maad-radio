@@ -45,13 +45,13 @@ const ContactSection = () => {
           rel="noopener noreferrer"
           className="flex items-center justify-center  text-white"
         >
-          <Image
-            src={'/next.svg'}
-            alt={social.name}
-            width={48}
-            height={48}
-            className="w-12 h-12"
-          />
+          {/* <Image */}
+          {/*   src={'/next.svg'} */}
+          {/*   alt={social.name} */}
+          {/*   width={48} */}
+          {/*   height={48} */}
+          {/*   className="w-12 h-12" */}
+          {/* /> */}
           {social.name}
         </Link>
       ))}
