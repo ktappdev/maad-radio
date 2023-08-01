@@ -1,4 +1,3 @@
-
 import Banner from "./components/Banner";
 import BannerImage from "./components/BannerImage";
 import ContactSection from "./components/Socials";
@@ -6,14 +5,12 @@ import Schedule from "./components/Schedule";
 import Youtube from "./components/Youtube";
 import GetLiveVideo from "./components/GetLiveVideo";
 import { ContactUs } from "./components/ContactUs";
-import { isMobile } from 'react-device-detect';
 export default function Home() {
   return (
     <main className="flex w-full min-h-screen flex-col items-center  py-8 px-4 gap-4">
-      {!isMobile && <GetLiveVideo />}
+      <GetLiveVideo />
       <Banner text="MAAD 97.5 FM" text2="IS WE OWN" />
       <BannerImage />
-
       <Schedule />
       <Banner text="STAY TUNED" text2="" />
       <div className="flex h-60 w-full flex-col  justify-between gap-4 items-center px-8">
@@ -25,7 +22,7 @@ export default function Home() {
 
           Contact Us
           <p className="text-base font-light ">
-            <a href="tel:+592-226-9753">+592-225-5555</a>
+            {/* <a href="tel:+592-226-9753">+592-225-5555</a> */}
           </p>
           <p className="text-base font-light">
             Send us a detailed message and we will get back to you as soon as possible.

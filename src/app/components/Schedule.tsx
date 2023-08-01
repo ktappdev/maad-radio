@@ -1,52 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { programs } from "@/app/lib/programs";
 const Schedule = () => {
-  const programs = [
-    {
-      id: 'morningshow',
-      title: "Morning Showcase",
-      time: "7:00 AM - 10:00 AM",
-      host: "Veronica Ramsaroop",
-      image: "https://i.pravatar.cc/200?img=22",
-    },
-    {
-      id: 'supremeshow',
-      title: "Supreme Show",
-      time: "10:00 AM - 01:00 PM",
-      host: "Fashion Diva Faith and DJ Leroy",
-      image: "https://i.pravatar.cc/200?img=32",
-    },
-    {
-      id: 'farrakhan',
-      title: "Rush Hour Drive",
-      time: "03:00 PM - 06:00 PM",
-      host: "N.E.B 592",
-      image: "https://i.pravatar.cc/200?img=2",
-    },
-    {
-      id: 'meltdown',
-      title: "The Meltdown",
-      time: "6:00 PM - 7:00 PM",
-      host: "Annmarie",
-      image: "https://i.pravatar.cc/200?img=6",
-    },
-    {
-      id: 'eveningvibe',
-      title: "Evening Vibe",
-      time: "7:00 PM - 8:00 PM",
-      host: "Annmarie",
-      image: "https://i.pravatar.cc/200?img=14",
-    },
-    {
-      id: 'latelateshow',
-      title: "The Late Late Show",
-      time: "9:00 PM - 12:00 PM",
-      host: "Annmarie",
-      image: "https://i.pravatar.cc/200?img=19",
-    },
-  ];
-
   const getBgColor = (index: any) => {
     const colors = [
       "bg-blue-200",
