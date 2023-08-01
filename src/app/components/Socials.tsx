@@ -37,25 +37,24 @@ const ContactSection = () => {
 
   return (
     <div id="contact" className="grid grid-cols-3 ">
-      socials
-      {/* {socialHandles.map((social) => ( */}
-      {/*   <Link */}
-      {/*     key={social.name} */}
-      {/*     href={`https://www.${social.name.toLowerCase()}.com/${social.handle}`} */}
-      {/*     target="_blank" */}
-      {/*     rel="noopener noreferrer" */}
-      {/*     className="flex items-center justify-center  text-white" */}
-      {/*   > */}
-      {/*     <Image */}
-      {/*       src={'/next.svg'} */}
-      {/*       alt={social.name} */}
-      {/*       width={48} */}
-      {/*       height={48} */}
-      {/*       className="w-12 h-12" */}
-      {/*     /> */}
-      {/*     {social.name} */}
-      {/*   </Link> */}
-      {/* ))} */}
+      {socialHandles.map((social) => (
+        <Link
+          key={social.name}
+          href={`https://www.${social.name.toLowerCase()}.com/${social.handle}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center  text-white"
+        >
+          {/* <Image */}
+          {/*   src={'/next.svg'} */}
+          {/*   alt={social.name} */}
+          {/*   width={48} */}
+          {/*   height={48} */}
+          {/*   className="w-12 h-12" */}
+          {/* /> */}
+          {social.name}
+        </Link>
+      ))}
     </div>
   );
 };
