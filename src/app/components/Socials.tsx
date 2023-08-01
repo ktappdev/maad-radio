@@ -39,10 +39,11 @@ const ContactSection = () => {
     <div id="contact" className="grid grid-cols-3 ">
       {socialHandles.map((social) => (
         <Link
-          // key={social.name}
-          href={`https://www.${social.name.toLowerCase()}.com/${social.handle}`}
-          target="_blank"
-          rel="noopener noreferrer"
+          key={social.name}
+          href='https://www.google.com'
+          // href={`https://www.${social.name.toLowerCase()}.com/${social.handle}`}
+          // target="_blank"
+          // rel="noopener noreferrer"
           className="flex items-center justify-center  text-white"
         >
           <Image
