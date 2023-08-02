@@ -1,19 +1,22 @@
 import React from 'react';
 
-const RadioPersonality = ({ name, show, time, imageSrc }: { name: string, show: string, time: string, imageSrc: string }) => {
+const RadioPersonality = ({ title, host, time, imageSrc, bio }:
+  { title: string, host: string, time: string, imageSrc: string, bio: string }) => {
   return (
-    <div className="flex items-center mb-4">
-      <img
-        src={imageSrc}
-        alt={name}
-        className="w-32 h-32 rounded-full object-cover float-left mr-4"
-      />
+    <div className="flex items-center mb-4 text-white">
+
       <div>
-        <h2 className="text-2xl font-bold">{name}</h2>
-        <p className="text-lg font-medium">{show}</p>
+        {/* <h2 className="text-2xl font-bold">{title}</h2> */}
         <p className="text-gray-500">{time}</p>
+        <p className="text-lg font-medium">{host}</p>
+        <br />
         <p className="text-justify">
-          {/* Add your fun and short bio text here */}
+          <img
+            src={imageSrc}
+            alt={title}
+            className="w-100 h-100 rounded-full object-cover float-left mr-4"
+          />
+          {bio}
         </p>
       </div>
     </div>

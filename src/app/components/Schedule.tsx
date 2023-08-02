@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { programs } from "@/app/lib/programs";
+import { iProgram } from "../lib/interfaces";
 const Schedule = () => {
   const getBgColor = (index: any) => {
     const colors = [
@@ -25,8 +26,8 @@ const Schedule = () => {
       </h1>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        {programs.map((program: any, index: any) => (
-          <Link href={`bio/${index}`} key={index} >
+        {programs.map((program: iProgram, index: any) => (
+          <Link href={`bio/${program.id}`} key={index} >
             <div
               key={index}
               className={`shadow-md p-4 rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg ${getBgColor(
