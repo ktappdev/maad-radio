@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { programs } from "@/app/lib/programs";
-import { iProgram } from "../lib/interfaces";
+import { iProgram } from "@/app/lib/interfaces";
 const Schedule = () => {
   const getBgColor = (index: any) => {
     const colors = [
