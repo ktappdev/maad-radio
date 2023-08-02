@@ -5,7 +5,7 @@ const page = ({ params }: { params: { id: string } }) => {
   const program = programs.find((program) => program.id === params.id);
   return (
     <div className="flex flex-col items-center justify-center w-full mx-auto px-4">
-      <h1 className="text-6xl text-center font-bold text-white"> {program?.title}</h1>
+      <h1 className="text-6xl text-center font-bold text-gray-200"> {program?.title}</h1>
       <RadioPersonality
         title={program?.title!}
         host={program?.host!}
