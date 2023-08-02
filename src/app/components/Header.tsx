@@ -7,13 +7,13 @@ const Header = () => {
       <Link href="/" className="hover:text-green-600">
         <Image src="/logo.png" alt="logo" width={40} height={40} />
       </Link>
-      <a href="#schedule" className="hover:text-green-600">
+      <a href="/#schedule" className="hover:text-green-600">
         Schedule
       </a>
-      <a href="#about" className="hover:text-green-600">
+      <a href="/#about" className="hover:text-green-600">
         About
       </a>
-      <a href="#contact" className="hover:text-green-600">
+      <a href="/#contact" className="hover:text-green-600">
         Contact
       </a>
     </div>
