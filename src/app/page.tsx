@@ -24,7 +24,6 @@ export default function Home() {
           Contact Us
           <p className="text-base font-light ">
 
-            {/* <a href="tel:+592-226-9753">+592-225-5555</a> */}
           </p>
           <p className="text-base font-light">
             Send us a detailed message and we will get back to you as soon as possible.
