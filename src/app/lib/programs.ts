@@ -25,7 +25,7 @@ May the Holy Ghost Power guide us as we embrace the Market Evangelist's powerful
     title: "Morning Showcase",
     time: "07:00 - 10:00",
     host: "DJ Famous & Shameeza Wong",
-    image: "/personalities/famwong.jpg",
+    image: "/personalities/fam-wong.jpg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     bio: `Tune in to the electrifying new era of morning radio with the dynamic duo at the helm - DJ Famous and Shameeza Wong, better known as Jasmine or Jazzy Jazz! Say goodbye to the mundane and hello to a vibrant start to your day as they take over the airwaves on the Morning Showcase, every Monday to Friday from 7 AM to 10 AM, exclusively on MAAD 97.5 FM.
 
