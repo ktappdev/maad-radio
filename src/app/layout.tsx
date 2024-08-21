@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Player from "./components/Player";
 import { Suspense } from "react";
 import LoadingSpinner from "./components/LoadingSpinner";
+import AdvertBanner from "./components/AdvertBanner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} max-w-4xl flex flex-col mx-auto gap-2`}
       >
+        <AdvertBanner />
         <Header />
         <div className="px-4">
           <Player audioUrl="https://streaming.broadcastradio.com:8872/maad975fm" />
