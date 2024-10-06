@@ -114,8 +114,8 @@ const Schedule: React.FC = () => {
           preload="metadata"
           className="w-full rounded-lg p-4"
         >
-          <source src="https://stream.lugetech.com/stream.opus" type="audio/ogg; codecs=opus" />
-          <source src="https://stream.lugetech.com/stream.mp3" type="audio/mpeg" />
+          <source src="https://stream.lugetech.com/stream" type="audio/ogg; codecs=opus" />
+          <source src="https://stream.lugetech.com/stream" type="audio/mpeg" />
           Your browser does not support the audio element.
         </ReactAudioPlayer>
       </div>
