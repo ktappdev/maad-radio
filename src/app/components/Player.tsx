@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import { programs } from "@/app/lib/programs";
 import { convertDaysToNumbers } from "@/app/lib/convertDaysToNumber";
+
 interface Program {
   id: string;
   title: string;
@@ -24,14 +25,8 @@ interface AudioPlayerProps {
 const Schedule: React.FC = () => {
   const [currentShow, setCurrentShow] = useState<Program | null>(null);
 
-
   const getCurrentShow = (): Program | null => {
     const currentTime = new Date();
-    // if now is weekend then return null
-    // if (currentTime.getDay() === 0 || currentTime.getDay() === 6) {
-    //   console.log('Weekend, so not returning any show for the player');
-    //   return null;
-    // }
     const currentProgram = programs.find((program) => {
       let daysTheProgramIsOn = convertDaysToNumbers(program?.days);
       if (!daysTheProgramIsOn.includes(currentTime.getDay())) {
@@ -43,29 +38,37 @@ const Schedule: React.FC = () => {
     return currentProgram || null;
   };
 
-
-
   const parseTime = (timeStr: string): ParsedTime => {
     const [startTimeStr, endTimeStr] = timeStr.split(" - ");
     const [startHour, startMinute] = startTimeStr.split(":").map(Number);
     const [endHour, endMinute] = endTimeStr.split(":").map(Number);
     const currentDate = new Date();
     return {
-      startTime: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), startHour, startMinute),
-      endTime: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), endHour, endMinute)
+      startTime: new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        currentDate.getDate(),
+        startHour,
+        startMinute
+      ),
+      endTime: new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        currentDate.getDate(),
+        endHour,
+        endMinute
+      ),
     };
   };
 
-
   useEffect(() => {
     const interval = setInterval(() => {
-      const updatedShow = getCurrentShow(); // Make sure getCurrentShow() returns the updated value
+      const updatedShow = getCurrentShow();
       setCurrentShow(updatedShow);
     }, 10000);
 
     return () => clearInterval(interval);
   });
-
 
   const getBgColor = (index: number): string => {
     const colors = [
@@ -104,16 +107,17 @@ const Schedule: React.FC = () => {
           )}
         </div>
         <ReactAudioPlayer
-          src={"https://stream.lugetech.com/stream"}
+          src="https://stream.lugetech.com/stream"
           autoPlay={false}
           controls
           listenInterval={10000}
           preload="metadata"
-          // onCanPlay={() => console.log("Can play")}
-          // onEnded={() => console.log("Playback ended")}
-          // onError={(e: Event) => console.log("Error:", e)}
           className="w-full rounded-lg p-4"
-        />
+        >
+          <source src="https://stream.lugetech.com/stream.opus" type="audio/ogg; codecs=opus" />
+          <source src="https://stream.lugetech.com/stream.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </ReactAudioPlayer>
       </div>
     </div>
   );
