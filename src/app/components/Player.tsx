@@ -24,7 +24,6 @@ interface AudioPlayerProps {
 const Schedule: React.FC = () => {
   const [currentShow, setCurrentShow] = useState<Program | null>(null);
 
-
   const getCurrentShow = (): Program | null => {
     const currentTime = new Date();
     // if now is weekend then return null
@@ -43,19 +42,28 @@ const Schedule: React.FC = () => {
     return currentProgram || null;
   };
 
-
-
   const parseTime = (timeStr: string): ParsedTime => {
     const [startTimeStr, endTimeStr] = timeStr.split(" - ");
     const [startHour, startMinute] = startTimeStr.split(":").map(Number);
     const [endHour, endMinute] = endTimeStr.split(":").map(Number);
     const currentDate = new Date();
     return {
-      startTime: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), startHour, startMinute),
-      endTime: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), endHour, endMinute)
+      startTime: new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        currentDate.getDate(),
+        startHour,
+        startMinute,
+      ),
+      endTime: new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        currentDate.getDate(),
+        endHour,
+        endMinute,
+      ),
     };
   };
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -65,7 +73,6 @@ const Schedule: React.FC = () => {
 
     return () => clearInterval(interval);
   });
-
 
   const getBgColor = (index: number): string => {
     const colors = [
@@ -104,7 +111,7 @@ const Schedule: React.FC = () => {
           )}
         </div>
         <ReactAudioPlayer
-          src={"https://stream.lugetech.com/stream"}
+          src={"https://streaming.broadcastradio.com/brutal"}
           autoPlay={false}
           controls
           listenInterval={10000}
