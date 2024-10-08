@@ -49,14 +49,14 @@ const Schedule: React.FC = () => {
         currentDate.getMonth(),
         currentDate.getDate(),
         startHour,
-        startMinute
+        startMinute,
       ),
       endTime: new Date(
         currentDate.getFullYear(),
         currentDate.getMonth(),
         currentDate.getDate(),
         endHour,
-        endMinute
+        endMinute,
       ),
     };
   };
@@ -114,8 +114,6 @@ const Schedule: React.FC = () => {
           preload="metadata"
           className="w-full rounded-lg p-4"
         >
-          <source src="https://stream.lugetech.com/stream" type="audio/ogg; codecs=opus" />
-          <source src="https://stream.lugetech.com/stream" type="audio/mpeg" />
           Your browser does not support the audio element.
         </ReactAudioPlayer>
       </div>
