@@ -107,7 +107,7 @@ const Schedule: React.FC = () => {
           )}
         </div>
         <ReactAudioPlayer
-          src="https://stream.lugetech.com/stream"
+          src={"https://streaming.broadcastradio.com/brutal"}
           autoPlay={false}
           controls
           listenInterval={10000}
