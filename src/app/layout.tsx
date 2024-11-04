@@ -24,7 +24,6 @@ export default function RootLayout({
       <body
         className={`${inter.className} max-w-4xl flex flex-col mx-auto gap-2`}
       >
-        <AdvertBanner />
         <Header />
         <div className="px-4">
           <Player audioUrl="https://streaming.broadcastradio.com:8872/maad975fm" />
