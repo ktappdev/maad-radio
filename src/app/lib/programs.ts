@@ -21,23 +21,27 @@ May the Holy Ghost Power guide us as we embrace the Market Evangelist's powerful
 
   },
   {
-    id: 'morningshow',
-    title: "Morning Showcase",
+    id: 'morningvibes',
+    title: "Maad Morning Vibes",
     time: "07:00 - 10:00",
-    host: "DJ Famous & Shameeza Wong",
-    image: "/personalities/fam-wong.jpg",
+    host: "Randy",
+    image: "/personalities/mmv.jpeg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
-    bio: `Tune in to the electrifying new era of morning radio with the dynamic duo at the helm - DJ Famous and Shameeza Wong, better known as Jasmine or Jazzy Jazz! Say goodbye to the mundane and hello to a vibrant start to your day as they take over the airwaves on the Morning Showcase, every Monday to Friday from 7 AM to 10 AM, exclusively on MAAD 97.5 FM.
+    bio: `Ditch the snooze button and kickstart your day with the infectious energy of Maad Morning Vibes, the hottest morning show on MAAD 97.5 FM! Every Monday to Friday from 7 AM to 10 AM, tune in as the dynamic and insightful Randolph Critchlow takes the reins, bringing you a unique blend of music, culture, and conversation that's guaranteed to get you going.
 
-DJ Famous, the mastermind behind GT Jamz and Guyana Got Talent, brings his unparalleled passion for Guyanese music to the global stage. With his visionary approach, he's not only elevating local talent but also showcasing the rich musical landscape of Guyana to audiences worldwide. From reggae rhythms to soca beats, DJ Famous ensures that every note resonates with the heartbeat of the nation.
+Meet Your Host: Randolph Critchlow - The Renaissance Man of Radio
 
-Joining him is the multitalented Shameeza Wong, whose diverse background in the arts adds an extra layer of depth to the show. With a knack for drama and a love for poetry, Shameeza brings a unique perspective to the Morning Showcase. Behind the mic, she's not just a voice but a force to be reckoned with, captivating audiences with her wit, charm, and undeniable charisma.
+Randolph isn't just your average radio host. He's a force of nature - a celebrated poet, an award-winning actor, a passionate educator, and a political mind, all rolled into one. Known for his captivating performances on stage, from the Theatre Guild to the iconic Link Show, Randolph brings that same charisma and depth to the airwaves. A former field coordinator with the Pan American Development Foundation and a graduate of the University of Guyana with a degree in International Relations and Affairs, he's got the knowledge and experience to spark engaging discussions.
 
-Together, DJ Famous and Shameeza create a dynamic synergy that sets the stage for an unforgettable morning experience. From spotlighting emerging artists to engaging in lively discussions about culture and creativity, the Morning Showcase is more than just a radio show—it's a celebration of Guyanese talent and identity.
+But don't let the impressive resume fool you. Randolph is also a music aficionado with a finger on the pulse of Guyanese rhythms and a deep understanding of various genres. He is also very jovial and approachable. He's your go-to source for the hottest tracks and the stories behind them. His background in education, theatre, and politics, combined with his love for music and his innate ability to connect with people, makes him the perfect guide for your morning journey.
 
-So, set your alarms, grab your coffee, and start your day on the right note with DJ Famous and Shameeza Wong on the Morning Showcase. Get ready to groove, laugh, and embrace the magic of morning radio like never before!
+More Than Just Music - A Celebration of Guyanese Life
 
-`,
+Maad Morning Vibes isn't just about spinning tunes. It's about celebrating the vibrant tapestry of Guyanese life. Expect lively discussions on current events, insightful interviews with local personalities, and a deep dive into the issues that matter most to you. With Randolph at the helm, you'll not only be entertained but also informed and inspired. He has the unique ability to draw on his experiences as a teacher, a dramatist, and a poet to look at issues from all angles.
+
+Get Your Daily Dose of Positivity
+
+Start your day on the right note with Maad Morning Vibes. It's the perfect blend of music, insightful conversation, and infectious energy, all designed to make your mornings brighter. So, grab your coffee, tune in to MAAD 97.5 FM, and let Randolph Critchlow infuse your day with positivity, laughter, and the undeniable spirit of Guyana!`,
 
   },
   {
