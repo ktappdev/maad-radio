@@ -8,23 +8,23 @@ const RadioPersonality = ({ title, host, time, imageSrc, bio, days }:
     <div className="flex justify-center items-center mb-2 text-white">
 
       <div>
-        {/* <span className="text-gray-500 sm:text-base font-bold text-center"> */}
-        {/*   <p className="text-sm sm:text-base">{`${title}`}</p> */}
-        {/*   <p className="text-sm sm:text-base">{`${time} hrs`}</p> */}
-        {/* </span> */}
-        {/* <div className="flex flex-row mt-2 tracking-widest items-center justify-center"> */}
-        {/*   {days.map((day: string, index: number) => { */}
-        {/*     return ( */}
-        {/*       <div */}
-        {/*         key={index} */}
-        {/*         className="flex flex-row justify-center text-gray-500 px-1 text-center w-full text-[8px] sm:text-base" */}
-        {/*       > */}
-        {/*         {day.slice(0, 3).toUpperCase()} */}
-        {/*       </div> */}
-        {/*     ); */}
-        {/*   })} */}
-        {/**/}
-        {/* </div> */}
+        <span className="text-gray-500 sm:text-base font-bold text-center">
+          <p className="text-sm sm:text-base">{`${title}`}</p>
+          <p className="text-sm sm:text-base">{`${time} hrs`}</p>
+        </span>
+        <div className="flex flex-row mt-2 tracking-widest items-center justify-center">
+          {days.map((day: string, index: number) => {
+            return (
+              <div
+                key={index}
+                className="flex flex-row justify-center text-gray-500 px-1 text-center w-full text-[8px] sm:text-base"
+              >
+                {day.slice(0, 3).toUpperCase()}
+              </div>
+            );
+          })}
+
+        </div>
         <div className="flex flex-col items-center justify-center mt-6">
           <p className="text-justify">
             <Image
