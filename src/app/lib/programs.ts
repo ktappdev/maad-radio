@@ -47,13 +47,13 @@ Start your day on the right note with Maad Morning Vibes. It's the perfect blend
   {
     id: 'supremeshow',
     title: "Supreme Show",
-    time: "10:00 - 13:00",
+    time: "12:00 - 14:00",
     host: "Fashion Diva Faith & DJ Leroy",
     image: "/personalities/supreme.jpg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     bio: `Get ready to be swept off your feet by the dazzling duo of radio royalty - it's time for "The Supreme Show" with none other than the fabulous Fashion Diva Faith and the electrifying DJ Leroy! This show is the epitome of fun and entertainment, bringing you the perfect blend of music, fashion, and celebrity gossip.
 
-From 10:00 to 13:00, every day, Fashion Diva Faith and DJ Leroy grace the airwaves, sprinkling their magic on your mid-mornings. Their dynamic chemistry sets the stage for a show that's bursting with laughter, wit, and charm.
+From 12:00 to 14:00, every day, Fashion Diva Faith and DJ Leroy grace the airwaves, sprinkling their magic on your mid-mornings. Their dynamic chemistry sets the stage for a show that's bursting with laughter, wit, and charm.
 
 "The Supreme Show" is not just any radio program; it's a star-studded affair! Prepare to be starstruck as they welcome celebrity guests from all walks of life. The glitz and glamour are endless, and the energy is infectious.
 
