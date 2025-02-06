@@ -10,9 +10,30 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Maad 97.5 FM - Is We Own GUYANA!",
-  description: "Maad 97.5FM - Guyana's top radio station, is your go-to destination for a diverse auditory experience. Explore the best in music, news, talk shows, and cultural programming that reflects the essence of Guyanese life. Stay updated with the latest news, engage in thought-provoking discussions, and celebrate our nation's heritage with Maad 97.5FM. Tune in now to connect with our vibrant Guyanese community.",
-
-  // image: "/logo.png",
+  description: "Maad 97.5FM - Guyana's top radio station, is your go-to destination for a diverse auditory experience. Explore the best in music, news, talk shows, and cultural programming that reflects the essence of Guyanese life.",
+  openGraph: {
+    title: "Maad 97.5 FM - Is We Own GUYANA!",
+    description: "Guyana's top radio station for music, news, and cultural programming",
+    url: "https://maad975fm.com",
+    siteName: "Maad 97.5 FM",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Maad 97.5 FM Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maad 97.5 FM - Is We Own GUYANA!",
+    description: "Guyana's top radio station for music, news, and cultural programming",
+    images: ["/logo.png"],
+    creator: "@maad975fm",
+  },
 };
 export default function RootLayout({
   children,
