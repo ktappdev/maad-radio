@@ -1,7 +1,6 @@
 export const programs = [
-
   {
-    id: 'holyghost',
+    id: "holyghost",
     title: "Holy Ghost Power",
     time: "05:00 - 07:00",
     host: "Di Market Evangelist",
@@ -18,10 +17,9 @@ This ain't your average gospel show; it's a spiritual wake-up call, calling us t
 So, rise and shine, for "Holy Ghost Power & Light" is here to enlighten your mornings with unyielding faith. Tune in as we receive the unfiltered truth, knowing that through the Gospel, we find strength, hope, and salvation.
 
 May the Holy Ghost Power guide us as we embrace the Market Evangelist's powerful message, and may the truth revealed in "Holy Ghost Power & Light" ignite our hearts and set our spirits ablaze with unwavering devotion to the Most High. Amen and hallelujah!`,
-
   },
   {
-    id: 'morningvibes',
+    id: "morningvibes",
     title: "Maad Morning Vibes",
     time: "07:00 - 10:00",
     host: "Randy",
@@ -43,14 +41,14 @@ Maad Morning Vibes isn't just about spinning tunes. It's about celebrating the v
 Get Your Daily Dose of Positivity
 
 Start your day on the right note with Maad Morning Vibes. It's the perfect blend of music, insightful conversation, and infectious energy, all designed to make your mornings brighter. So, grab your coffee, tune in to MAAD 97.5 FM, and let Randolph Critchlow infuse your day with positivity, laughter, and the undeniable spirit of Guyana!`,
-
   },
   {
-    id: 'supremeshow',
+    id: "supremeshow",
     title: "Supreme Show",
     time: "12:00 - 14:00",
     host: "Fashion Diva Faith & DJ Leroy",
     image: "/personalities/supreme.jpg",
+    image2: "/personalities/supreme2.jpg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     bio: `Get ready to be swept off your feet by the dazzling duo of radio royalty - it's time for "The Supreme Show" with none other than the fabulous Fashion Diva Faith and the electrifying DJ Leroy! This show is the epitome of fun and entertainment, bringing you the perfect blend of music, fashion, and celebrity gossip.
 
@@ -63,24 +61,22 @@ Fashion Diva Faith, with her impeccable style and fashion-forward insights, know
 And as for DJ Leroy, he's the musical virtuoso, spinning tracks that make your heart race and feet tap! His beats are pure magic, creating an atmosphere that's impossible to resist.
 
 So, grab your favorite drink, sit back, and let the fashion and music extravaganza begin! Tune in to "The Supreme Show" for a mid-morning delight that's bound to leave you smiling, dancing, and feeling like a true superstar!`,
-
   },
   {
-    id: 'rushhour',
+    id: "rushhour",
     title: "Rush Hour Drive",
     time: "15:00 - 18:00",
     host: "N.E.B 592",
     image: "/personalities/neb.jpg",
     image2: "/personalities/neb2.jpg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
-    bio: `Delwin Neblett aka N.E.B is first and foremost one of the more versatile Artistes coming out of Guyana and the Caribbean Region at large. 
-N.E.B's musical creativity has both Caribbean and North American Influences and though more popularly known for his electrifying Raps, N.E.B's Music largely Incorporate's his smooth and silky vocals which are testimony to his formal training gained through, The Royal School Of Music, CSEC and The Barbados Community College where he completed an Associate's Degree In Music Majoring As A Vocalist. 
-The stage name "N.E.B 592" comes from the first three (3) letters of his last name (Neblett) and the country code 592 which identifies with Guyana. N.E.B has transcended his vocal talent and passion for Music into a Career in Broadcasting as The Host Of The Rush Hour Drive On Maad 97.5 FM, and now has a continuously growing fan base. 
+    bio: `Delwin Neblett aka N.E.B is first and foremost one of the more versatile Artistes coming out of Guyana and the Caribbean Region at large.
+N.E.B's musical creativity has both Caribbean and North American Influences and though more popularly known for his electrifying Raps, N.E.B's Music largely Incorporate's his smooth and silky vocals which are testimony to his formal training gained through, The Royal School Of Music, CSEC and The Barbados Community College where he completed an Associate's Degree In Music Majoring As A Vocalist.
+The stage name "N.E.B 592" comes from the first three (3) letters of his last name (Neblett) and the country code 592 which identifies with Guyana. N.E.B has transcended his vocal talent and passion for Music into a Career in Broadcasting as The Host Of The Rush Hour Drive On Maad 97.5 FM, and now has a continuously growing fan base.
 His mission as a broadcaster is to help create an awareness of any Guyanese person at home or abroad who is doing something of substance whether in the creative industries or otherwise. N.E.B's unique style of Radio delivery is one of his biggest assets as a broadcaster and he wishes to use his voice as best he can to represent those without a voice and help to bring about change when necessary.`,
-
   },
   {
-    id: 'meltdown',
+    id: "meltdown",
     title: "The Meltdown",
     time: "18:00 - 19:00",
     host: "Annmarie",
@@ -96,10 +92,9 @@ From 18:00 to 19:00, every Monday, Tuesday, Thursday, and Friday, Annmarie grace
 But it's not just her voice that captivates; Annmarie's radiant personality and wonderful soul shine through in every word she speaks. And let's not forget to mention her stunning beauty, which adds an extra layer of enchantment to the show.
 
 So, as the sun sets and the evening begins, tune in to "The Meltdown" and let Annmarie whisk you away to a place where the magic of vintage rock and timeless classics come alive. It's an hour of pure bliss and musical enchantment that you won't want to miss!`,
-
   },
   {
-    id: 'eveningvibez',
+    id: "eveningvibez",
     title: "Evening Vibez",
     time: "19:00 - 20:00",
     host: "Selector Andre",
@@ -114,6 +109,5 @@ Step up, step in, and let di music take ova! This ain't just any show; it's an i
 Even though di station's in Guyana, we bringin' di Caribbean to di world! From di first beat to di last, we keep di energy high, di vibes right, and di music flowin' like a sweet island breeze.
 
 So, mek we start di party and make some memories together! "Evening Vibez" wid Selector Andre inna di mix, mi massive - this a di place to be! So kick back, relax, and let di rhythm move yuh, 'cause we got di hottest dancehall and reggae tunes to keep yuh groovin' from dusk till dawn.♪♫ Ya done know!♪♫`,
-
   },
 ];
