@@ -46,7 +46,7 @@ export default function RootLayout({
         className={`${inter.className} max-w-4xl flex flex-col mx-auto gap-2`}
       >
         <Header />
-        <div className="px-4">
+        <div className="px-4 mt-24">
           <Player audioUrl="https://streaming.broadcastradio.com:8872/maad975fm" />
         </div>
         <Suspense fallback={<LoadingSpinner />}>

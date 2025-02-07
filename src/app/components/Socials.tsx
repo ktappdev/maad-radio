@@ -42,14 +42,14 @@ const ContactSection = () => {
   ];
 
   return (
-    <div id="contact" className="grid grid-cols-3 ">
+    <div id="contact" className="grid grid-cols-3 gap-8 p-6 bg-[#333336] rounded-lg shadow-lg">
       {socialHandles.map((social) => (
         <Link
           key={social.name}
           href={`https://www.${social.slug}.com/${social.handle}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center  text-white"
+          className="flex flex-col items-center justify-center text-white space-y-2 transform hover:scale-110 transition-all duration-300 hover:text-[#FD7B2B]"
         >
           <Image
             src={social.logo}
@@ -58,7 +58,7 @@ const ContactSection = () => {
             height={48}
             className="w-12 h-12"
           />
-          {/* {social.name} */}
+          <span className="text-sm font-medium">{social.name}</span>
         </Link>
       ))}
     </div>
