@@ -49,10 +49,11 @@ export default function Page({ params }: Props) {
         host={program?.host!}
         time={program?.time!}
         imageSrc={program?.image!}
-        days={program?.days!}
+        image2Src={program?.image2}
         bio={program?.bio!}
+        days={program?.days!}
       />
     </div>
-  )
-};
+  );
+}
 

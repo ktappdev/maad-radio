@@ -26,6 +26,7 @@ May the Holy Ghost Power guide us as we embrace the Market Evangelist's powerful
     time: "07:00 - 10:00",
     host: "Randy",
     image: "/personalities/mmv.jpeg",
+    image2: "/personalities/mmv2.jpeg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     bio: `Ditch the snooze button and kickstart your day with the infectious energy of Maad Morning Vibes, the hottest morning show on MAAD 97.5 FM! Every Monday to Friday from 7 AM to 10 AM, tune in as the dynamic and insightful Randolph Critchlow takes the reins, bringing you a unique blend of music, culture, and conversation that's guaranteed to get you going.
 
@@ -70,6 +71,7 @@ So, grab your favorite drink, sit back, and let the fashion and music extravagan
     time: "15:00 - 18:00",
     host: "N.E.B 592",
     image: "/personalities/neb.jpg",
+    image2: "/personalities/neb2.jpg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     bio: `Delwin Neblett aka N.E.B is first and foremost one of the more versatile Artistes coming out of Guyana and the Caribbean Region at large. 
 N.E.B's musical creativity has both Caribbean and North American Influences and though more popularly known for his electrifying Raps, N.E.B's Music largely Incorporate's his smooth and silky vocals which are testimony to his formal training gained through, The Royal School Of Music, CSEC and The Barbados Community College where he completed an Associate's Degree In Music Majoring As A Vocalist. 
@@ -83,6 +85,7 @@ His mission as a broadcaster is to help create an awareness of any Guyanese pers
     time: "18:00 - 19:00",
     host: "Annmarie",
     image: "/personalities/annmarie.jpg",
+    image2: "/personalities/annmarie2.jpg",
     days: ["monday", "tuesday", "thursday", "friday"],
     bio: `Step into the world of musical nostalgia with "The Meltdown" hosted by the enchanting Annmarie! This show takes you on a magical journey through time, embracing the charm of vintage rock, soca oldies, and timeless classics.
 
