@@ -2,11 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "./components/Header";
-import Player from "./components/Player";
 import BottomPlayer from "./components/BottomPlayer";
 import { Suspense } from "react";
 import LoadingSpinner from "./components/LoadingSpinner";
-import AdvertBanner from "./components/AdvertBanner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -55,7 +53,7 @@ export default function RootLayout({
           <Player audioUrl="https://streaming.broadcastradio.com:8872/maad975fm" />
         </div> */}
         <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
-        <BottomPlayer />
+        {/* <BottomPlayer /> */}
       </body>
     </html>
   );
