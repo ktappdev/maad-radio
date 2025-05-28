@@ -1,3 +1,4 @@
+"use client";
 import Banner from "./components/Banner";
 import BannerImage from "./components/BannerImage";
 import ContactSection from "./components/Socials";
@@ -6,14 +7,90 @@ import Youtube from "./components/Youtube";
 import GetLiveVideo from "./components/GetLiveVideo";
 import { ContactUs } from "./components/ContactUs";
 import Image from "next/image";
+
 export default function Home() {
+  // Function to scroll to schedule section
+  const scrollToSchedule = () => {
+    const scheduleElement = document.getElementById("schedule");
+    if (scheduleElement) {
+      scheduleElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  // Function to trigger bottom player
+  const triggerPlay = () => {
+    // Find the bottom player's play button and click it
+    const playButton = document.querySelector(
+      "[data-bottom-player-play]"
+    ) as HTMLButtonElement;
+    if (playButton) {
+      playButton.click();
+    } else {
+      // Fallback: dispatch a custom event that the bottom player can listen to
+      window.dispatchEvent(new CustomEvent("triggerPlay"));
+    }
+  };
   return (
-    <main className="flex w-full min-h-screen flex-col items-center pt-24 px-6 gap-8 bg-gradient-to-b from-black to-[#1a1a1a]">
-      <GetLiveVideo />
-      <div className="transform hover:scale-105 transition-transform duration-300">
-        <Banner text="MAAD 97.5 FM" text2="IS WE OWN" />
+    <main className="flex w-full min-h-screen flex-col items-center pt-24 px-4 sm:px-6 lg:px-8 gap-12 bg-gradient-to-br from-black via-[#1a1a1a] to-black animate-gradient relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-[#FD7B2B]/10 rounded-full animate-radio-wave"></div>
+        <div
+          className="absolute top-40 right-20 w-24 h-24 bg-[#FD7B2B]/10 rounded-full animate-radio-wave"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute bottom-40 left-1/4 w-20 h-20 bg-[#FD7B2B]/10 rounded-full animate-radio-wave"
+          style={{ animationDelay: "2s" }}
+        ></div>
       </div>
-      <div className="w-full shadow-2xl hover:shadow-[#FD7B2B]/20 transition-shadow duration-300">
+
+      <GetLiveVideo />
+
+      {/* Enhanced Hero Section */}
+      <div className="relative z-10 flex flex-col items-center space-y-8">
+        {/* Floating Logo */}
+        <div className="animate-float">
+          <Image
+            src="/logo.png"
+            width={120}
+            height={120}
+            alt="MAAD 97.5 FM Logo"
+            className="animate-pulse-glow rounded-full"
+          />
+        </div>
+
+        {/* Enhanced Banner with Typewriter Effect */}
+        <div className="text-center space-y-4">
+          <div className="transform hover:scale-105 transition-transform duration-300">
+            <Banner text="MAAD 97.5 FM" text2="" />
+          </div>
+          <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FD7B2B] animate-typewriter text-shadow">
+            IS WE OWN
+          </div>
+        </div>
+
+        {/* Call-to-Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mt-8">
+          <button
+            onClick={triggerPlay}
+            className="px-8 py-3 bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] text-white font-bold rounded-full hover:scale-105 transition-all duration-300 glow-orange animate-pulse-glow"
+          >
+            🎵 Listen Live Now
+          </button>
+          <button
+            onClick={scrollToSchedule}
+            className="px-8 py-3 glass-dark text-white font-bold rounded-full hover:scale-105 transition-all duration-300 border border-[#FD7B2B]/50"
+          >
+            📻 View Schedule
+          </button>
+        </div>
+      </div>
+
+      <div className="w-full max-w-6xl shadow-2xl hover:shadow-[#FD7B2B]/30 transition-shadow duration-500 rounded-2xl overflow-hidden">
         <BannerImage />
       </div>
       <Schedule />
@@ -23,22 +100,50 @@ export default function Home() {
       <div className="flex h-60 w-full flex-col justify-between gap-6 items-center px-8 md:px-12">
         <Youtube videoId={"SjQh0x5AYCw"} />
       </div>
-      <div className="flex w-full bg-[#333333] flex-col px-8 md:px-12 py-10 text-center text-lg font-bold rounded-lg shadow-xl">
-        <div className="flex flex-col text-3xl w-full justify-center items-center text-white mb-8 space-y-4">
-          <h2 className="font-bold tracking-wide">Contact Us</h2>
-          <p className="text-base font-light max-w-2xl">
-            Send us a detailed message and we will get back to you as soon as possible.
-          </p>
-        </div>
-        <ContactUs />
-        <div className="w-full h-auto mt-8 transform hover:scale-[1.02] transition-transform duration-300">
-          <Image 
-            alt='promo' 
-            src="/maad-promo.jpg" 
-            width={900} 
-            height={500}
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
-          />
+      {/* Enhanced Contact Section */}
+      <div className="w-full max-w-6xl glass-dark rounded-3xl px-8 md:px-12 py-16 text-center relative overflow-hidden">
+        {/* Decorative Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FD7B2B]/5 via-transparent to-[#FF8C42]/5"></div>
+        <div className="absolute top-0 right-0 w-40 h-40 bg-[#FD7B2B]/10 rounded-full -translate-y-20 translate-x-20"></div>
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#FF8C42]/10 rounded-full translate-y-16 -translate-x-16"></div>
+
+        <div className="relative z-10">
+          <div className="flex flex-col w-full justify-center items-center text-white mb-12 space-y-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text tracking-wide">
+              Contact Us
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] rounded-full"></div>
+            <p className="text-lg sm:text-xl text-gray-300 font-light max-w-3xl leading-relaxed">
+              Send us a detailed message and we will get back to you as soon as
+              possible.
+            </p>
+          </div>
+
+          <div className="mb-12">
+            <ContactUs />
+          </div>
+
+          {/* Enhanced Promo Image */}
+          <div className="w-full h-auto group">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <Image
+                alt="MAAD 97.5 FM Promo"
+                src="/maad-promo.jpg"
+                width={900}
+                height={500}
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="text-white text-center space-y-4">
+                  <h3 className="text-2xl sm:text-3xl font-bold">
+                    MAAD 97.5 FM
+                  </h3>
+                  <p className="text-lg">Is We Own!</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="w-full py-8 px-4">

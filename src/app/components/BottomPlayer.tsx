@@ -81,7 +81,20 @@ const BottomPlayer: React.FC = () => {
       setCurrentShow(updatedShow);
     };
     updateShow();
-  }, []);
+
+    // Listen for custom play event from hero buttons
+    const handleTriggerPlay = () => {
+      if (audioRef.current && !isPlaying) {
+        audioRef.current.play().catch((e) => {
+          console.error("Audio playback error:", e);
+          setError("Unable to play audio stream. Please try again later.");
+        });
+      }
+    };
+
+    window.addEventListener("triggerPlay", handleTriggerPlay);
+    return () => window.removeEventListener("triggerPlay", handleTriggerPlay);
+  }, [isPlaying]);
 
   const togglePlay = () => {
     if (audioRef.current) {
@@ -163,6 +176,7 @@ const BottomPlayer: React.FC = () => {
           {/* Play/Pause Button */}
           <button
             onClick={togglePlay}
+            data-bottom-player-play
             className="bg-[#FD7B2B] hover:bg-[#FD7B2B]/80 text-white p-2 rounded-full transition-colors duration-200 shadow-lg"
           >
             {isPlaying ? (
