@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function Page({ params }: Props) {
   const program = programs.find((program) => program.id === params.id);
   return (
-    <div className="flex flex-col items-center justify-center w-full mx-auto px-4">
+    <div className="flex flex-col items-center justify-center w-full mx-auto px-4 pt-24">
       <h1 className="text-5xl tracking-tight sm:text-6xl text-center font-bold text-gray-200"> {program?.host}</h1>
       <RadioPersonality
         title={program?.title!}

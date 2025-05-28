@@ -8,7 +8,7 @@ import { ContactUs } from "./components/ContactUs";
 import Image from "next/image";
 export default function Home() {
   return (
-    <main className="flex w-full min-h-screen flex-col items-center py-12 px-6 gap-8 bg-gradient-to-b from-black to-[#1a1a1a]">
+    <main className="flex w-full min-h-screen flex-col items-center pt-24 px-6 gap-8 bg-gradient-to-b from-black to-[#1a1a1a]">
       <GetLiveVideo />
       <div className="transform hover:scale-105 transition-transform duration-300">
         <Banner text="MAAD 97.5 FM" text2="IS WE OWN" />
