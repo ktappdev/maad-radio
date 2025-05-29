@@ -91,7 +91,7 @@ export default function Home() {
       <GetLiveVideo />
 
       {/* Enhanced Hero Section */}
-      <div className="relative z-10 flex flex-col items-center space-y-8">
+      <header className="relative z-10 flex flex-col items-center space-y-8">
         {/* Floating Logo */}
         <div className="animate-float">
           <Image
@@ -100,6 +100,7 @@ export default function Home() {
             height={120}
             alt="MAAD 97.5 FM Logo"
             className="animate-pulse-glow rounded-full"
+            priority
           />
         </div>
 
@@ -130,12 +131,15 @@ export default function Home() {
             📻 View Schedule
           </button>
         </div>
-      </div>
+      </header>
 
       <div className="w-full max-w-6xl shadow-2xl hover:shadow-[#FD7B2B]/30 transition-shadow duration-500 rounded-2xl overflow-hidden">
         <BannerImage />
       </div>
-      <Schedule />
+      <section id="schedule">
+        <h2 className="sr-only">Program Schedule</h2>
+        <Schedule />
+      </section>
       <div className="transform hover:scale-105 transition-transform duration-300">
         <Banner text="STAY TUNED" text2="" />
       </div>
@@ -174,6 +178,7 @@ export default function Home() {
                 width={900}
                 height={500}
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">

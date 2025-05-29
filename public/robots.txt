@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maad975fm.com/sitemap.xml
