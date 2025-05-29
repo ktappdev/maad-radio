@@ -1,4 +1,3 @@
-
 import RadioPersonality from "@/app/components/RadioPersonality";
 import { programs } from "@/app/lib/programs";
 import { Metadata } from "next";
@@ -19,21 +18,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${program.title} with ${program.host} - Maad 97.5 FM`,
-    description: `Join ${program.host} on ${program.days.join(", ")} at ${program.time} hrs for ${program.title} on Maad 97.5 FM`,
+    description: `Join ${program.host} on ${program.days.join(", ")} at ${
+      program.time
+    } hrs for ${program.title} on Maad 97.5 FM`,
     openGraph: {
       title: `${program.title} with ${program.host} - Maad 97.5 FM`,
-      description: `Join ${program.host} on ${program.days.join(", ")} at ${program.time} hrs for ${program.title} on Maad 97.5 FM`,
-      images: [{
-        url: program.image,
-        width: 800,
-        height: 600,
-        alt: `${program.title} with ${program.host}`,
-      }],
+      description: `Join ${program.host} on ${program.days.join(", ")} at ${
+        program.time
+      } hrs for ${program.title} on Maad 97.5 FM`,
+      images: [
+        {
+          url: program.image,
+          width: 800,
+          height: 600,
+          alt: `${program.title} with ${program.host}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${program.title} with ${program.host} - Maad 97.5 FM`,
-      description: `Join ${program.host} on ${program.days.join(", ")} at ${program.time} hrs for ${program.title} on Maad 97.5 FM`,
+      description: `Join ${program.host} on ${program.days.join(", ")} at ${
+        program.time
+      } hrs for ${program.title} on Maad 97.5 FM`,
       images: [program.image],
     },
   };
@@ -42,18 +49,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function Page({ params }: Props) {
   const program = programs.find((program) => program.id === params.id);
   return (
-    <div className="flex flex-col items-center justify-center w-full mx-auto px-4">
-      <h1 className="text-5xl tracking-tight sm:text-6xl text-center font-bold text-gray-200"> {program?.host}</h1>
+    <div className="flex flex-col items-center justify-center w-full mx-auto px-4 pt-24">
+      <h1 className="text-5xl tracking-tight sm:text-6xl text-center font-bold text-gray-200">
+        {" "}
+        {program?.host}
+      </h1>
       <RadioPersonality
         title={program?.title!}
         host={program?.host!}
         time={program?.time!}
         imageSrc={program?.image!}
         image2Src={program?.image2}
+        image3Src={program?.image3}
         bio={program?.bio!}
         days={program?.days!}
       />
     </div>
   );
 }
-

@@ -22,25 +22,17 @@ May the Holy Ghost Power guide us as we embrace the Market Evangelist's powerful
     id: "morningvibes",
     title: "Maad Morning Vibes",
     time: "07:00 - 10:00",
-    host: "Randy",
-    image: "/personalities/mmv.jpeg",
-    image2: "/personalities/mmv2.jpeg",
+    host: "Randy & Tchaiko",
+    image: "/personalities/mmv-cover.jpg",
+    image2: "/personalities/mmv.jpeg",
+    image3: "/personalities/tchaiko-performing.jpg",
+    image4: "/personalities/mmv.jpeg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
-    bio: `Ditch the snooze button and kickstart your day with the infectious energy of Maad Morning Vibes, the hottest morning show on MAAD 97.5 FM! Every Monday to Friday from 7 AM to 10 AM, tune in as the dynamic and insightful Randolph Critchlow takes the reins, bringing you a unique blend of music, culture, and conversation that's guaranteed to get you going.
+    bio: `Kickstart your day with the infectious energy of Maad Morning Vibes! Every Monday to Friday from 7 AM to 10 AM, the dynamic duo of Randolph Critchlow and Tchaiko Abike Rodney bring you an unbeatable blend of music, culture, and conversation. Randy, a celebrated poet, actor, and educator, combines his theatrical charisma with deep political insights. Tchaiko, carrying the artistic legacy of her late father Henry Rodney, brings fresh creative energy as a National School of Theatre Arts student and voice actress on the radio drama series Merundoi.
 
-Meet Your Host: Randolph Critchlow - The Renaissance Man of Radio
+This power duo delivers more than just music – they celebrate Guyanese culture through special segments that have become listener favorites. Talented Tuesdays shines a spotlight on emerging and established Guyanese talent across all artistic disciplines, giving local artists a platform to showcase their work. 592 Fridays takes listeners on a musical journey through Guyana's rich heritage, featuring everything from classic calypso and chutney to contemporary soca and reggae, ending each work week with pure Guyanese musical pride.
 
-Randolph isn't just your average radio host. He's a force of nature - a celebrated poet, an award-winning actor, a passionate educator, and a political mind, all rolled into one. Known for his captivating performances on stage, from the Theatre Guild to the iconic Link Show, Randolph brings that same charisma and depth to the airwaves. A former field coordinator with the Pan American Development Foundation and a graduate of the University of Guyana with a degree in International Relations and Affairs, he's got the knowledge and experience to spark engaging discussions.
-
-But don't let the impressive resume fool you. Randolph is also a music aficionado with a finger on the pulse of Guyanese rhythms and a deep understanding of various genres. He is also very jovial and approachable. He's your go-to source for the hottest tracks and the stories behind them. His background in education, theatre, and politics, combined with his love for music and his innate ability to connect with people, makes him the perfect guide for your morning journey.
-
-More Than Just Music - A Celebration of Guyanese Life
-
-Maad Morning Vibes isn't just about spinning tunes. It's about celebrating the vibrant tapestry of Guyanese life. Expect lively discussions on current events, insightful interviews with local personalities, and a deep dive into the issues that matter most to you. With Randolph at the helm, you'll not only be entertained but also informed and inspired. He has the unique ability to draw on his experiences as a teacher, a dramatist, and a poet to look at issues from all angles.
-
-Get Your Daily Dose of Positivity
-
-Start your day on the right note with Maad Morning Vibes. It's the perfect blend of music, insightful conversation, and infectious energy, all designed to make your mornings brighter. So, grab your coffee, tune in to MAAD 97.5 FM, and let Randolph Critchlow infuse your day with positivity, laughter, and the undeniable spirit of Guyana!`,
+Maad Morning Vibes creates a community where listeners feel connected to their culture and inspired to start their day with purpose. Expect lively discussions, insightful interviews with local personalities, poetry segments, and engaging conversations about issues that matter. With Randy's jovial nature and political awareness paired with Tchaiko's storytelling prowess and creative solutions, you'll be entertained, informed, and energized. Tune in to MAAD 97.5 FM and let this unstoppable team infuse your morning with positivity, laughter, and the undeniable spirit of Guyana!`,
   },
   {
     id: "supremeshow",
