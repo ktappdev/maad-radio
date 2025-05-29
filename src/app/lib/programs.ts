@@ -23,31 +23,16 @@ May the Holy Ghost Power guide us as we embrace the Market Evangelist's powerful
     title: "Maad Morning Vibes",
     time: "07:00 - 10:00",
     host: "Randy & Tchaiko",
-    image: "/personalities/mmv.jpeg",
-    image2: "/personalities/tchaiko-standing.jpg",
+    image: "/personalities/mmv-cover.jpg",
+    image2: "/personalities/mmv.jpeg",
     image3: "/personalities/tchaiko-performing.jpg",
+    image4: "/personalities/mmv.jpeg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
-    bio: `Ditch the snooze button and kickstart your day with the infectious energy of Maad Morning Vibes, the hottest morning show on MAAD 97.5 FM! Every Monday to Friday from 7 AM to 10 AM, tune in as the dynamic duo of Randolph Critchlow and Tchaiko Abike Rodney take the reins, bringing you an unbeatable blend of music, culture, conversation, and creative energy that's guaranteed to get you going.
+    bio: `Kickstart your day with the infectious energy of Maad Morning Vibes! Every Monday to Friday from 7 AM to 10 AM, the dynamic duo of Randolph Critchlow and Tchaiko Abike Rodney bring you an unbeatable blend of music, culture, and conversation. Randy, a celebrated poet, actor, and educator, combines his theatrical charisma with deep political insights. Tchaiko, carrying the artistic legacy of her late father Henry Rodney, brings fresh creative energy as a National School of Theatre Arts student and voice actress on the radio drama series Merundoi.
 
-Meet Your Power Duo: A Perfect Creative Partnership
+This power duo delivers more than just music – they celebrate Guyanese culture through special segments that have become listener favorites. Talented Tuesdays shines a spotlight on emerging and established Guyanese talent across all artistic disciplines, giving local artists a platform to showcase their work. 592 Fridays takes listeners on a musical journey through Guyana's rich heritage, featuring everything from classic calypso and chutney to contemporary soca and reggae, ending each work week with pure Guyanese musical pride.
 
-Randolph Critchlow, the renaissance man of radio, brings his wealth of experience as a celebrated poet, award-winning actor, passionate educator, and political mind to the microphone. Known for his captivating performances from the Theatre Guild to the iconic Link Show, Randolph's charisma and depth shine through the airwaves. A former field coordinator with the Pan American Development Foundation and a graduate of the University of Guyana with a degree in International Relations and Affairs, he's got the knowledge and experience to spark engaging discussions.
-
-Alongside him is the vibrant and creative Tchaiko Abike Rodney, a dynamic force who brings her own artistic flair to the show. Born and raised in historic Georgetown's Alberttown community, Tchaiko carries the legacy of her late father, popular Guyanese actor and entertainer Henry Rodney. Her life has always been centered around stage, action, and drama, making her a natural fit for the world of radio entertainment. Currently a student at the National School of Theatre Arts and Drama, she's already made her mark in productions like Twelfth Night, Link Show, Children of Baby, and Anansi, while also lending her voice to the longstanding radio drama series Merundoi.
-
-The Creative Chemistry That Ignites Your Mornings
-
-Together, Randy and Tchaiko create an unstoppable team that combines intellectual depth with artistic passion. While Randolph brings his jovial and approachable nature along with his finger on the pulse of Guyanese rhythms and deep understanding of various genres, Tchaiko adds her poetry, storytelling prowess, and infectious creativity to the mix. Her thought-provoking pieces address present-day social issues while providing practical solutions, making her the perfect complement to Randolph's political and educational insights.
-
-Both hosts share a love for the arts and a commitment to celebrating Guyanese culture. Tchaiko's background in poetry, script writing, and content creation, combined with her ability to immerse herself into characters and create relatable moods, perfectly complements Randolph's theatrical and educational background. Together, they create vivid imagery through their storytelling, drawing from real-life experiences that resonate with listeners across Guyana and beyond.
-
-More Than Just Music - A Celebration of Guyanese Life and Arts
-
-Maad Morning Vibes isn't just about spinning tunes. It's about celebrating the vibrant tapestry of Guyanese life through multiple artistic lenses. Expect lively discussions on current events, insightful interviews with local personalities, poetry segments, and deep dives into the issues that matter most to you. With both Randy and Tchaiko at the helm, you'll not only be entertained but also informed, inspired, and creatively energized. Their unique ability to draw on their combined experiences as teachers, dramatists, poets, and performers allows them to examine issues from all angles while keeping the energy high and the content engaging.
-
-Get Your Daily Dose of Positivity and Creativity
-
-Start your day on the right note with Maad Morning Vibes. It's the perfect blend of music, insightful conversation, creative expression, and infectious energy, all designed to make your mornings brighter and more inspiring. So, grab your coffee, tune in to MAAD 97.5 FM, and let Randy and Tchaiko infuse your day with positivity, laughter, artistic inspiration, and the undeniable spirit of Guyana!`,
+Maad Morning Vibes creates a community where listeners feel connected to their culture and inspired to start their day with purpose. Expect lively discussions, insightful interviews with local personalities, poetry segments, and engaging conversations about issues that matter. With Randy's jovial nature and political awareness paired with Tchaiko's storytelling prowess and creative solutions, you'll be entertained, informed, and energized. Tune in to MAAD 97.5 FM and let this unstoppable team infuse your morning with positivity, laughter, and the undeniable spirit of Guyana!`,
   },
   {
     id: "supremeshow",

@@ -53,7 +53,7 @@ export default function RootLayout({
           <Player audioUrl="https://streaming.broadcastradio.com:8872/maad975fm" />
         </div> */}
         <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
-        <BottomPlayer />
+        {/* <BottomPlayer /> */}
       </body>
     </html>
   );
