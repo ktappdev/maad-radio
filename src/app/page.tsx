@@ -1,4 +1,5 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import Banner from "./components/Banner";
 import BannerImage from "./components/BannerImage";
 import ContactSection from "./components/Socials";
@@ -9,6 +10,45 @@ import { ContactUs } from "./components/ContactUs";
 import Image from "next/image";
 
 export default function Home() {
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [textIndex, setTextIndex] = useState(0);
+
+  const texts = ["IS WE OWN", "GUYANESE"];
+
+  useEffect(() => {
+    const currentFullText = texts[textIndex];
+
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          // Typing
+          if (currentIndex < currentFullText.length) {
+            setCurrentText(currentFullText.substring(0, currentIndex + 1));
+            setCurrentIndex(currentIndex + 1);
+          } else {
+            // Finished typing, wait then start deleting
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
+        } else {
+          // Deleting
+          if (currentIndex > 0) {
+            setCurrentText(currentFullText.substring(0, currentIndex - 1));
+            setCurrentIndex(currentIndex - 1);
+          } else {
+            // Finished deleting, move to next text
+            setIsDeleting(false);
+            setTextIndex((textIndex + 1) % texts.length);
+          }
+        }
+      },
+      isDeleting ? 50 : 150
+    ); // Faster deleting, slower typing
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex, isDeleting, textIndex, texts]);
+
   // Function to scroll to schedule section
   const scrollToSchedule = () => {
     const scheduleElement = document.getElementById("schedule");
@@ -68,8 +108,10 @@ export default function Home() {
           <div className="transform hover:scale-105 transition-transform duration-300">
             <Banner text="MAAD 97.5 FM" text2="" />
           </div>
-          <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FD7B2B] animate-typewriter text-shadow">
-            IS WE OWN
+          <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FD7B2B] min-h-[1.2em] flex items-center justify-center">
+            <span className="border-r-3 border-[#FD7B2B] pr-1 animate-pulse">
+              {currentText}
+            </span>
           </div>
         </div>
 

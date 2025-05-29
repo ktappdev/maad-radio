@@ -49,26 +49,6 @@
   }
 }
 
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  0%,
-  50% {
-    border-color: transparent;
-  }
-  51%,
-  100% {
-    border-color: #fd7b2b;
-  }
-}
-
 @keyframes stagger-in {
   0% {
     opacity: 0;
@@ -122,14 +102,6 @@
 
   .animate-radio-wave {
     animation: radio-wave 2s ease-out infinite;
-  }
-
-  .animate-typewriter {
-    animation: typewriter 3s steps(40, end), blink 0.75s step-end infinite;
-    overflow: hidden;
-    border-right: 3px solid #fd7b2b;
-    white-space: nowrap;
-    margin: 0 auto;
   }
 
   .animate-stagger {
