@@ -169,6 +169,29 @@ export default function Home() {
             <ContactUs />
           </div>
 
+          {/* ReviewIt Widget */}
+          <div className="w-full overflow-visible">
+            <div id="reviewit-widget-cb91048e-5af3-438b-afa4-705cb41699cb" className="w-full overflow-visible"></div>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function() {
+                    var script = document.createElement('script');
+                    script.src = 'https://reviewit.gy/widgets/embed.js';
+                    script.async = true;
+                    script.onload = function() {
+                      new ReviewItWidget({
+                        widgetId: 'cb91048e-5af3-438b-afa4-705cb41699cb',
+                        container: 'reviewit-widget-cb91048e-5af3-438b-afa4-705cb41699cb'
+                      });
+                    };
+                    document.head.appendChild(script);
+                  })();
+                `,
+              }}
+            />
+          </div>
+
           {/* Enhanced Promo Image */}
           <div className="w-full h-auto group">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
