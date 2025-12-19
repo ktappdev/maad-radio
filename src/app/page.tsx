@@ -130,6 +130,21 @@ export default function Home() {
           >
             📻 View Schedule
           </button>
+          <a
+            href="https://tunein.com/radio/Maad-975-FM-s350006/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 glass-dark text-white font-bold rounded-full hover:scale-105 transition-all duration-300 border border-[#FD7B2B]/50 flex items-center gap-2"
+          >
+            <Image
+              src="/tunein.webp"
+              alt="TuneIn"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
+            TuneIn
+          </a>
         </div>
       </header>
 

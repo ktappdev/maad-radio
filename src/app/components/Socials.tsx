@@ -39,6 +39,11 @@ const ContactSection = () => {
       logo: "/tiktok-logo.png",
       slug: "tiktok",
     },
+    {
+      name: "TuneIn",
+      logo: "/tunein.webp",
+      url: "https://tunein.com/radio/Maad-975-FM-s350006/",
+    },
   ];
 
   return (
@@ -46,7 +51,7 @@ const ContactSection = () => {
       {socialHandles.map((social) => (
         <Link
           key={social.name}
-          href={`https://www.${social.slug}.com/${social.handle}`}
+          href={social.url || `https://www.${social.slug}.com/${social.handle}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center text-white space-y-2 transform hover:scale-110 transition-all duration-300 hover:text-[#FD7B2B]"
