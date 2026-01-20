@@ -5,6 +5,8 @@ const GetLiveVideo = () => {
   // const [iframeHTML, setIframeHTML] = useState("");
   const [isLive, setIsLive] = useState(false);
   const [videoLink, setVideoLink] = useState("");
+  const [hasChecked, setHasChecked] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (isMobile) {
@@ -12,6 +14,7 @@ const GetLiveVideo = () => {
     }
     const fetchIframe = async () => {
       try {
+        setIsLoading(true);
         const res = await fetch("/api/live-video", { cache: "no-store" });
         const data = await res.json();
         const first = data?.data?.[0];
@@ -28,10 +31,19 @@ const GetLiveVideo = () => {
         }
       } catch (error) {
         setIsLive(false);
+      } finally {
+        setHasChecked(true);
+        setIsLoading(false);
       }
     };
 
     fetchIframe();
+
+    const intervalId = setInterval(fetchIframe, 30000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   if (isMobile && isLive) {
@@ -43,7 +55,7 @@ const GetLiveVideo = () => {
   }
   return (
     <>
-      {isLive && !isMobile &&
+      {isLive && !isMobile && (
         <div className="flex justify-center items-center w-full">
           <script
             src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
@@ -51,21 +63,26 @@ const GetLiveVideo = () => {
             async
           ></script>
 
-          <div className="fb-video" data-href={videoLink}>
-          </div>
-        </div>}
-      {isLive && isMobile &&
+          <div className="fb-video" data-href={videoLink}></div>
+        </div>
+      )}
+      {isLive && isMobile && (
         <div className="flex justify-center items-center w-full">
           <iframe
             src={videoLink}
             width="100%"
             height="100%"
             style={{ border: "none", overflow: "hidden" }}
-
             allowFullScreen={true}
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           ></iframe>
-        </div>}
+        </div>
+      )}
+      {!isLive && !isMobile && hasChecked && !isLoading && (
+        <div className="flex justify-center items-center w-full text-xs text-white font-light">
+          No live video right now
+        </div>
+      )}
     </>
   )
 };
