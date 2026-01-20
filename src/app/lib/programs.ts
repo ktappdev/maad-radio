@@ -147,12 +147,10 @@ From island sunshine to late-night mellow, this show carries the heartbeat of re
     id: "movingforward",
     title: "Moving Forward",
     time: "19:00 - 20:00",
-    host: "MP Amanza Desir",
+    host: "MP Amanza Desir & Randolph",
     image: "/logo.png",
     days: ["sunday"],
-    bio: `Moving Forward is a focused hour of civic discussion and community progress. MP Amanza Desir shares updates, invites guest perspectives, and highlights ways listeners can stay involved.
-
-It is a calm, constructive space that closes out the weekend with a forward-looking message.`,
+    bio: `Coming soon...`,
   },
   {
     id: "maadzone",

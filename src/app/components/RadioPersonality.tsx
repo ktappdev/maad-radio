@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 
 const RadioPersonality = ({
@@ -24,7 +24,7 @@ const RadioPersonality = ({
   const [scrollY, setScrollY] = useState(0);
   const [visibleParagraphs, setVisibleParagraphs] = useState<number[]>([]);
 
-  let paragraphs = bio.split("\n");
+  const paragraphs = useMemo(() => bio.split("\n"), [bio]);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -38,31 +38,29 @@ const RadioPersonality = ({
     });
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [paragraphs.length]);
+  }, [paragraphs]);
 
   return (
     <div className="flex justify-center items-center mb-8 text-white relative">
-      {/* Parallax Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-20 right-10 w-32 h-32 bg-[#FD7B2B]/5 rounded-full"
-          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+          className="absolute top-20 right-10 w-32 h-32 bg-[#FD7B2B]/4 rounded-full blur-3xl"
+          style={{ transform: `translateY(${scrollY * 0.2}px)` }}
         ></div>
         <div
-          className="absolute bottom-40 left-10 w-24 h-24 bg-[#FF8C42]/5 rounded-full"
-          style={{ transform: `translateY(${scrollY * -0.2}px)` }}
+          className="absolute bottom-40 left-10 w-24 h-24 bg-[#FF8C42]/4 rounded-full blur-3xl"
+          style={{ transform: `translateY(${scrollY * -0.15}px)` }}
         ></div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
         <div className="text-center mb-12 space-y-6">
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text mb-4 tracking-wide text-shadow animate-stagger">
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text mb-4 tracking-wide text-shadow">
             {title}
           </div>
           <div
-            className="text-lg sm:text-xl text-gray-300 font-semibold glass-dark px-6 py-3 rounded-full inline-block animate-stagger"
-            style={{ animationDelay: "0.2s" }}
+            className="text-base sm:text-lg text-gray-300 font-semibold glass-dark px-5 py-2 rounded-full inline-block border border-white/5"
           >
             {time} hrs
           </div>
@@ -72,8 +70,7 @@ const RadioPersonality = ({
           {days.map((day: string, index: number) => (
             <div
               key={index}
-              className="text-[#FD7B2B] text-sm font-bold px-4 py-2 glass-dark rounded-full border border-[#FD7B2B]/30 hover:scale-105 transition-transform duration-300 animate-stagger"
-              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+              className="text-[#FD7B2B] text-xs sm:text-sm font-semibold px-4 py-2 glass-dark rounded-full border border-[#FD7B2B]/20"
             >
               {day.slice(0, 3).toUpperCase()}
             </div>
@@ -81,7 +78,7 @@ const RadioPersonality = ({
         </div>
 
         {/* Enhanced Content Area */}
-        <div className="glass-dark rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+        <div className="glass-dark rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-white/5">
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#FD7B2B]/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#FF8C42]/10 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
@@ -94,7 +91,7 @@ const RadioPersonality = ({
                 alt={title}
                 width={250}
                 height={250}
-                className="object-cover rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:rotate-2"
+                className="object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#FD7B2B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
@@ -127,7 +124,7 @@ const RadioPersonality = ({
                             alt={`${title} - ${host}`}
                             width={320}
                             height={320}
-                            className="object-cover rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-2"
+                            className="object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
                           />
                           <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#FF8C42]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
@@ -155,7 +152,7 @@ const RadioPersonality = ({
                             alt={`${title} - ${host}`}
                             width={280}
                             height={280}
-                            className="object-cover rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1"
+                            className="object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
                           />
                           <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#FD7B2B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>

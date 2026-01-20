@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { programs } from "@/app/lib/programs";
 import { convertDaysToNumbers } from "@/app/lib/convertDaysToNumber";
 
@@ -30,20 +30,7 @@ const BottomPlayer: React.FC = () => {
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const getCurrentShow = (): Program | null => {
-    const currentTime = new Date();
-    const currentProgram = programs.find((program) => {
-      let daysTheProgramIsOn = convertDaysToNumbers(program?.days);
-      if (!daysTheProgramIsOn.includes(currentTime.getDay())) {
-        return null;
-      }
-      const { startTime, endTime } = parseTime(program.time);
-      return currentTime >= startTime && currentTime <= endTime;
-    });
-    return currentProgram || null;
-  };
-
-  const parseTime = (timeStr: string): ParsedTime => {
+  const parseTime = useCallback((timeStr: string): ParsedTime => {
     const [startTimeStr, endTimeStr] = timeStr.split(" - ");
     const [startHour, startMinute] = startTimeStr.split(":").map(Number);
     const [endHour, endMinute] = endTimeStr.split(":").map(Number);
@@ -64,7 +51,20 @@ const BottomPlayer: React.FC = () => {
         endMinute
       ),
     };
-  };
+  }, []);
+
+  const getCurrentShow = useCallback((): Program | null => {
+    const currentTime = new Date();
+    const currentProgram = programs.find((program) => {
+      let daysTheProgramIsOn = convertDaysToNumbers(program?.days);
+      if (!daysTheProgramIsOn.includes(currentTime.getDay())) {
+        return null;
+      }
+      const { startTime, endTime } = parseTime(program.time);
+      return currentTime >= startTime && currentTime <= endTime;
+    });
+    return currentProgram || null;
+  }, [parseTime]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -73,7 +73,7 @@ const BottomPlayer: React.FC = () => {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [getCurrentShow]);
 
   useEffect(() => {
     const updateShow = () => {
@@ -94,7 +94,7 @@ const BottomPlayer: React.FC = () => {
 
     window.addEventListener("triggerPlay", handleTriggerPlay);
     return () => window.removeEventListener("triggerPlay", handleTriggerPlay);
-  }, [isPlaying]);
+  }, [getCurrentShow, isPlaying]);
 
   const togglePlay = () => {
     if (audioRef.current) {

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Banner from "./components/Banner";
 import BannerImage from "./components/BannerImage";
 import ContactSection from "./components/Socials";
@@ -15,7 +15,7 @@ export default function Home() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
 
-  const texts = ["IS WE OWN", "GUYANESE"];
+  const texts = useMemo(() => ["IS WE OWN", "GUYANESE"], []);
 
   useEffect(() => {
     const currentFullText = texts[textIndex];
@@ -74,43 +74,34 @@ export default function Home() {
     }
   };
   return (
-    <main className="flex w-full min-h-screen flex-col items-center pt-24 px-4 sm:px-6 lg:px-8 gap-12 bg-gradient-to-br from-black via-[#1a1a1a] to-black animate-gradient relative overflow-hidden">
-      {/* Animated Background Elements */}
+    <main className="flex w-full min-h-screen flex-col items-center pt-24 px-4 sm:px-6 lg:px-8 gap-12 bg-[#0b0b0b] relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-[#FD7B2B]/10 rounded-full animate-radio-wave"></div>
-        <div
-          className="absolute top-40 right-20 w-24 h-24 bg-[#FD7B2B]/10 rounded-full animate-radio-wave"
-          style={{ animationDelay: "1s" }}
-        ></div>
-        <div
-          className="absolute bottom-40 left-1/4 w-20 h-20 bg-[#FD7B2B]/10 rounded-full animate-radio-wave"
-          style={{ animationDelay: "2s" }}
-        ></div>
+        <div className="absolute top-24 left-8 w-28 h-28 bg-[#FD7B2B]/6 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-32 right-8 w-40 h-40 bg-[#FD7B2B]/6 rounded-full blur-3xl"></div>
       </div>
 
       <GetLiveVideo />
 
       {/* Enhanced Hero Section */}
       <header className="relative z-10 flex flex-col items-center space-y-8">
-        {/* Floating Logo */}
-        <div className="animate-float">
+        <div className="rounded-2xl bg-white/5 border border-white/10 p-4 shadow-xl">
           <Image
             src="/logo.png"
-            width={120}
-            height={120}
+            width={110}
+            height={110}
             alt="MAAD 97.5 FM Logo"
-            className="animate-pulse-glow rounded-full"
+            className="rounded-xl"
             priority
           />
         </div>
 
         {/* Enhanced Banner with Typewriter Effect */}
         <div className="text-center space-y-4">
-          <div className="transform hover:scale-105 transition-transform duration-300">
+          <div className="transition-transform duration-300 hover:scale-[1.01]">
             <Banner text="MAAD 97.5 FM" text2="" />
           </div>
-          <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FD7B2B] min-h-[1.2em] flex items-center justify-center">
-            <span className="border-r-3 border-[#FD7B2B] pr-1 animate-pulse">
+          <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#FD7B2B] min-h-[1.2em] flex items-center justify-center">
+            <span className="border-r-2 border-[#FD7B2B] pr-1">
               {currentText}
             </span>
           </div>
@@ -120,21 +111,21 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
           <button
             onClick={triggerPlay}
-            className="px-8 py-3 bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] text-white font-bold rounded-full hover:scale-105 transition-all duration-300 glow-orange animate-pulse-glow"
+            className="px-8 py-3 bg-[#FD7B2B] text-white font-semibold rounded-full hover:bg-[#FF8C42] transition-colors duration-200 shadow-md shadow-[#FD7B2B]/20"
           >
-            🎵 Listen Live Now
+            Listen Live
           </button>
           <button
             onClick={scrollToSchedule}
-            className="px-8 py-3 glass-dark text-white font-bold rounded-full hover:scale-105 transition-all duration-300 border border-[#FD7B2B]/50"
+            className="px-8 py-3 glass-dark text-white font-semibold rounded-full hover:border-white/20 transition-colors duration-200 border border-white/10"
           >
-            📻 View Schedule
+            View Schedule
           </button>
           <a
             href="https://tunein.com/radio/Maad-975-FM-s350006/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 glass-dark text-white font-bold rounded-full hover:scale-105 transition-all duration-300 border border-[#FD7B2B]/50 flex items-center gap-2"
+            className="px-8 py-3 glass-dark text-white font-semibold rounded-full hover:border-white/20 transition-colors duration-200 border border-white/10 flex items-center gap-2"
           >
             <Image
               src="/tunein.webp"
@@ -148,25 +139,22 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="w-full max-w-6xl shadow-2xl hover:shadow-[#FD7B2B]/30 transition-shadow duration-500 rounded-2xl overflow-hidden">
+      <div className="w-full max-w-6xl shadow-2xl shadow-black/40 transition-shadow duration-300 rounded-2xl overflow-hidden border border-white/5">
         <BannerImage />
       </div>
       <section id="schedule">
         <h2 className="sr-only">Program Schedule</h2>
         <Schedule />
       </section>
-      <div className="transform hover:scale-105 transition-transform duration-300">
+      <div className="transition-transform duration-300 hover:scale-[1.01]">
         <Banner text="STAY TUNED" text2="" />
       </div>
       <div className="flex h-60 w-full flex-col justify-between gap-6 items-center px-8 md:px-12">
         <Youtube videoId={"SjQh0x5AYCw"} />
       </div>
       {/* Enhanced Contact Section */}
-      <div className="w-full max-w-6xl glass-dark rounded-3xl px-8 md:px-12 py-16 text-center relative overflow-hidden">
-        {/* Decorative Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FD7B2B]/5 via-transparent to-[#FF8C42]/5"></div>
-        <div className="absolute top-0 right-0 w-40 h-40 bg-[#FD7B2B]/10 rounded-full -translate-y-20 translate-x-20"></div>
-        <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#FF8C42]/10 rounded-full translate-y-16 -translate-x-16"></div>
+      <div className="w-full max-w-6xl glass-dark rounded-3xl px-8 md:px-12 py-16 text-center relative overflow-hidden border border-white/5">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/2 via-transparent to-[#FD7B2B]/5"></div>
 
         <div className="relative z-10">
           <div className="flex flex-col w-full justify-center items-center text-white mb-12 space-y-6">
@@ -209,13 +197,13 @@ export default function Home() {
 
           {/* Enhanced Promo Image */}
           <div className="w-full h-auto group">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-black/40 border border-white/5">
               <Image
                 alt="MAAD 97.5 FM Promo"
                 src="/maad-promo.jpg"
                 width={900}
                 height={500}
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
