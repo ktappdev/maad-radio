@@ -6,6 +6,7 @@ const GetLiveVideo = () => {
   // const [iframeHTML, setIframeHTML] = useState("");
   const [isLive, setIsLive] = useState(false);
   const [videoLink, setVideoLink] = useState("");
+  const [embedUrl, setEmbedUrl] = useState("");
   const [hasChecked, setHasChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,16 +28,27 @@ const GetLiveVideo = () => {
         if (isCurrentlyLive) {
           setIsLive(true);
           const iframe = first.embed_html.replace(/&amp;/g, "&");
-          const srcParts = iframe.split("src=")[1].split(" ")[0].split("%2F");
-          const videoId = srcParts[srcParts.length - 1];
-          setVideoLink(
-            `https://www.facebook.com/maad975/videos/${videoId.replace('"', "")}`
-          );
+          const srcMatch = iframe.match(/src="([^"]+)"/);
+          const nextEmbedUrl = srcMatch?.[1]?.replace(/`/g, "") ?? "";
+          setEmbedUrl(nextEmbedUrl);
+          if (nextEmbedUrl) {
+            try {
+              const parsed = new URL(nextEmbedUrl);
+              const href = parsed.searchParams.get("href");
+              if (href) {
+                setVideoLink(decodeURIComponent(href));
+              }
+            } catch (parseError) {
+              setVideoLink("");
+            }
+          }
         } else {
           setIsLive(false);
+          setEmbedUrl("");
         }
       } catch (error) {
         setIsLive(false);
+        setEmbedUrl("");
       } finally {
         setHasChecked(true);
         setIsLoading(false);
@@ -63,15 +75,18 @@ const GetLiveVideo = () => {
     <>
       {isLive && !isMobile && (
         <div className="flex flex-col justify-center items-center w-full gap-4">
-          <div className="flex justify-center items-center w-full">
-            <script
-              src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
-              nonce="GLMKdyjM"
-              async
-            ></script>
-
-            <div className="fb-video" data-href={videoLink}></div>
-          </div>
+          {embedUrl && (
+            <div className="flex justify-center items-center w-full">
+              <iframe
+                src={embedUrl}
+                width="100%"
+                height="100%"
+                style={{ border: "none", overflow: "hidden" }}
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+          )}
           <a
             href={videoLink}
             target="_blank"
@@ -91,16 +106,18 @@ const GetLiveVideo = () => {
       )}
       {isLive && isMobile && (
         <div className="flex flex-col justify-center items-center w-full gap-4">
-          <div className="flex justify-center items-center w-full">
-            <iframe
-              src={videoLink}
-              width="100%"
-              height="100%"
-              style={{ border: "none", overflow: "hidden" }}
-              allowFullScreen={true}
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            ></iframe>
-          </div>
+          {embedUrl && (
+            <div className="flex justify-center items-center w-full">
+              <iframe
+                src={embedUrl}
+                width="100%"
+                height="100%"
+                style={{ border: "none", overflow: "hidden" }}
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+          )}
           <a
             href={videoLink}
             target="_blank"
