@@ -34,26 +34,7 @@ This power duo delivers more than just music – they celebrate Guyanese culture
 
 Maad Morning Vibes creates a community where listeners feel connected to their culture and inspired to start their day with purpose. Expect lively discussions, insightful interviews with local personalities, poetry segments, and engaging conversations about issues that matter. With Randy's jovial nature and political awareness paired with Tchaiko's storytelling prowess and creative solutions, you'll be entertained, informed, and energized. Tune in to MAAD 97.5 FM and let this unstoppable team infuse your morning with positivity, laughter, and the undeniable spirit of Guyana!`,
   },
-  {
-    id: "supremeshow",
-    title: "Supreme Show",
-    time: "12:00 - 14:00",
-    host: "Fashion Diva Faith & DJ Leroy",
-    image: "/personalities/supreme.jpg",
-    image2: "/personalities/supreme2.jpg",
-    days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
-    bio: `Get ready to be swept off your feet by the dazzling duo of radio royalty - it's time for "The Supreme Show" with none other than the fabulous Fashion Diva Faith and the electrifying DJ Leroy! This show is the epitome of fun and entertainment, bringing you the perfect blend of music, fashion, and celebrity gossip.
 
-From 12:00 to 14:00, every day, Fashion Diva Faith and DJ Leroy grace the airwaves, sprinkling their magic on your mid-mornings. Their dynamic chemistry sets the stage for a show that's bursting with laughter, wit, and charm.
-
-"The Supreme Show" is not just any radio program; it's a star-studded affair! Prepare to be starstruck as they welcome celebrity guests from all walks of life. The glitz and glamour are endless, and the energy is infectious.
-
-Fashion Diva Faith, with her impeccable style and fashion-forward insights, knows how to move and groove! She dances like nobody's watching, adding an extra flair to the live stream that'll make you want to join in!
-
-And as for DJ Leroy, he's the musical virtuoso, spinning tracks that make your heart race and feet tap! His beats are pure magic, creating an atmosphere that's impossible to resist.
-
-So, grab your favorite drink, sit back, and let the fashion and music extravaganza begin! Tune in to "The Supreme Show" for a mid-morning delight that's bound to leave you smiling, dancing, and feeling like a true superstar!`,
-  },
   {
     id: "rushhour",
     title: "Rush Hour Drive",
@@ -84,23 +65,6 @@ From 18:00 to 19:00, every Monday, Tuesday, Thursday, and Friday, Annmarie grace
 But it's not just her voice that captivates; Annmarie's radiant personality and wonderful soul shine through in every word she speaks. And let's not forget to mention her stunning beauty, which adds an extra layer of enchantment to the show.
 
 So, as the sun sets and the evening begins, tune in to "The Meltdown" and let Annmarie whisk you away to a place where the magic of vintage rock and timeless classics come alive. It's an hour of pure bliss and musical enchantment that you won't want to miss!`,
-  },
-  {
-    id: "eveningvibez",
-    title: "Evening Vibez",
-    time: "19:00 - 20:00",
-    host: "Selector Andre",
-    image: "/personalities/selectorandre.jpg",
-    days: ["monday", "tuesday", "wednesday"],
-    bio: `Big up massive, welcome to the "Evening Vibez," hosted by the vibes man himself, Selector Andre! We lockin' in from 19:00 to 21:00, Monday Tuesday and Wednesdays, with nothing but the sweetest dancehall and reggae tunes straight from the heart of the Caribbean.
-
-Mi people, get ready fi di irie vibes! Selector Andre got di Caribbean influence flowin' inna di mix, and when mi seh flowin', mi mean it's bubblin' like di best Guyanese cookup. Trust mi, we got di real deal, no fakin' around here.
-
-Step up, step in, and let di music take ova! This ain't just any show; it's an island experience like no other. Selector Andre knows di ting, and him gonna make yuh feel like yuh right there in di dancehall a Jamaica, feelin' di riddim deep inna yuh soul.
-
-Even though di station's in Guyana, we bringin' di Caribbean to di world! From di first beat to di last, we keep di energy high, di vibes right, and di music flowin' like a sweet island breeze.
-
-So, mek we start di party and make some memories together! "Evening Vibez" wid Selector Andre inna di mix, mi massive - this a di place to be! So kick back, relax, and let di rhythm move yuh, 'cause we got di hottest dancehall and reggae tunes to keep yuh groovin' from dusk till dawn.♪♫ Ya done know!♪♫`,
   },
   {
     id: "frontline",
