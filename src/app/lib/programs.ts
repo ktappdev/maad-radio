@@ -102,4 +102,246 @@ Even though di station's in Guyana, we bringin' di Caribbean to di world! From d
 
 So, mek we start di party and make some memories together! "Evening Vibez" wid Selector Andre inna di mix, mi massive - this a di place to be! So kick back, relax, and let di rhythm move yuh, 'cause we got di hottest dancehall and reggae tunes to keep yuh groovin' from dusk till dawn.♪♫ Ya done know!♪♫`,
   },
+  {
+    id: "frontline",
+    title: "The Frontline Show",
+    time: "10:00 - 12:00",
+    host: "Chow Pow & DJ Fifty",
+    image: "/logo.png",
+    days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    bio: `The Frontline Show is your mid-morning pulse check, blending headlines, community talk, and the hottest requests. Chow Pow and DJ Fifty keep the energy sharp with real-time updates, guest shout-outs, and a steady stream of island hits.
+
+Expect lively debates, quick-fire segments, and plenty of listener call-ins. It is the spot where music meets the moment and the city stays in sync.`,
+  },
+  {
+    id: "lunchdate",
+    title: "The Lunch Date",
+    time: "12:00 - 13:00",
+    host: "The Lunch Date Team",
+    image: "/logo.png",
+    days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    bio: `The Lunch Date is your noon-time reset, serving soft grooves and light conversation to carry you through the workday. The team brings easy vibes, feel-good dedications, and a rhythm that keeps the office humming.
+
+Whether you are grabbing a plate or powering through, this hour is designed for relaxed listening and community connection.`,
+  },
+  {
+    id: "shadyville",
+    title: "ShadyVille",
+    time: "13:00 - 14:00",
+    host: "ShadyVille",
+    image: "/logo.png",
+    days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    bio: `ShadyVille is the after-lunch escape where the beats get deeper and the selections get bolder. It is a blend of smooth jams, throwbacks, and underground flavor with a signature laid-back edge.
+
+From the first drop to the last fade, ShadyVille keeps the pace steady and the mood just right.`,
+  },
+  {
+    id: "farrakhanmessage",
+    title: "Farrakhan Message",
+    time: "14:00 - 15:00",
+    host: "The Message Desk",
+    image: "/logo.png",
+    days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    bio: `Farrakhan Message is a reflective hour centered on community, faith, and motivation. The show focuses on spoken-word insight, guided discussion, and thoughtful takeaways for daily life.
+
+Listeners tune in for clarity, encouragement, and a calm space that invites deeper thinking.`,
+  },
+  {
+    id: "vybesup",
+    title: "Vybes Up Show",
+    time: "19:00 - 21:00",
+    host: "DJ Safi Hype",
+    image: "/logo.png",
+    days: ["monday", "tuesday", "wednesday", "thursday"],
+    bio: `Vybes Up Show turns the evening up with nonstop energy and club-ready mixes. DJ Safi Hype blends dancehall, soca, and crossover hits with shout-outs and quick-check-ins from the audience.
+
+It is two hours of high-intensity vibes built for late drives, home workouts, and everyone who wants the night to feel electric.`,
+  },
+  {
+    id: "podcastcitymatters",
+    title: "Podcast City Matters",
+    time: "19:00 - 20:00",
+    host: "City Matters Podcast",
+    image: "/logo.png",
+    days: ["friday"],
+    bio: `Podcast City Matters brings conversations that spotlight local voices, culture, and civic life. Each episode balances thoughtful interviews with practical updates that keep the community informed.
+
+This is the Friday feature that sets the stage for the weekend with purpose and perspective.`,
+  },
+  {
+    id: "reggaeinfluencer",
+    title: "Reggae Influencer",
+    time: "19:00 - 21:00",
+    host: "Troy Azore",
+    image: "/logo.png",
+    days: ["saturday"],
+    bio: `Reggae Influencer is a weekend showcase of roots, lovers rock, and modern reggae flavors. Troy Azore curates an easy flow of classics and fresh cuts with stories behind the rhythms.
+
+From island sunshine to late-night mellow, this show carries the heartbeat of reggae all night long.`,
+  },
+  {
+    id: "movingforward",
+    title: "Moving Forward",
+    time: "19:00 - 20:00",
+    host: "MP Amanza Desir",
+    image: "/logo.png",
+    days: ["sunday"],
+    bio: `Moving Forward is a focused hour of civic discussion and community progress. MP Amanza Desir shares updates, invites guest perspectives, and highlights ways listeners can stay involved.
+
+It is a calm, constructive space that closes out the weekend with a forward-looking message.`,
+  },
+  {
+    id: "maadzone",
+    title: "The Maad Zone",
+    time: "21:00 - 24:00",
+    host: "Alcapone",
+    image: "/logo.png",
+    days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    bio: `The Maad Zone is the late-night destination for big tunes, bold talk, and high-energy requests. Alcapone keeps the momentum rolling with a mix that blends crowd favorites and deep cuts.
+
+If you are up late and want a soundtrack that feels alive, this is the zone you lock into.`,
+  },
+  {
+    id: "setitoff",
+    title: "Set It Off",
+    time: "21:00 - 24:00",
+    host: "Benghazi",
+    image: "/logo.png",
+    days: ["saturday", "sunday"],
+    bio: `Set It Off is the weekend nightcap, delivering nonstop party energy and late-night shout-outs. Benghazi keeps the tempo high with a mix of dancehall, soca, and club-ready anthems.
+
+It is the soundtrack for the after-hours crowd and anyone who wants to end the night on a high.`,
+  },
+  {
+    id: "weekendvybes-chris",
+    title: "Weekend Vybes",
+    time: "07:00 - 08:00",
+    host: "Chris Persaud",
+    image: "/logo.png",
+    days: ["saturday"],
+    bio: `Weekend Vybes starts Saturday mornings with a clean, uplifting playlist and quick community check-ins. Chris Persaud keeps it light, fun, and easy to ride with.
+
+It is the perfect warm-up before the weekend gets busy.`,
+  },
+  {
+    id: "vybzcentral",
+    title: "Vybz Central",
+    time: "08:00 - 11:00",
+    host: "Selecter Face",
+    image: "/logo.png",
+    days: ["saturday"],
+    bio: `Vybz Central is the Saturday cornerstone for nonstop Caribbean energy. Selecter Face blends party classics with current hits to keep the airwaves moving.
+
+Three hours of high tempo, big rhythm, and listener love make this a weekend favorite.`,
+  },
+  {
+    id: "weekendvybes-anthony",
+    title: "Weekend Vybes",
+    time: "08:00 - 09:00",
+    host: "Anthony Persaud",
+    image: "/logo.png",
+    days: ["sunday"],
+    bio: `Weekend Vybes on Sunday brings a smooth, easy ride into the day. Anthony Persaud mixes mellow favorites with bright moments to keep the morning relaxed.
+
+It is the soundtrack for a calm start and a good mood.`,
+  },
+  {
+    id: "sportsmedicine",
+    title: "Sports Medicine",
+    time: "10:00 - 11:00",
+    host: "Wayne Walcott",
+    image: "/logo.png",
+    days: ["sunday"],
+    bio: `Sports Medicine blends health advice, fitness talk, and recovery tips for everyday listeners. Wayne Walcott makes the topics accessible with practical guidance and real-life stories.
+
+Whether you are training hard or just staying active, this show keeps you informed and motivated.`,
+  },
+  {
+    id: "chillsaturdays",
+    title: "Chill Saturdays",
+    time: "11:00 - 13:00",
+    host: "Bark & Selector Shines",
+    image: "/logo.png",
+    days: ["saturday"],
+    bio: `Chill Saturdays is the laid-back weekend lounge with smooth blends and easy chatter. Bark and Selector Shines curate a relaxed mix built for long drives, cookups, and lazy afternoons.
+
+It is two hours of calm energy and mellow vibes.`,
+  },
+  {
+    id: "radioannand",
+    title: "Radio Annand",
+    time: "11:00 - 13:00",
+    host: "Chandrowti Sarran",
+    image: "/logo.png",
+    days: ["sunday"],
+    bio: `Radio Annand serves community news, cultural highlights, and listener dedications with a warm, welcoming voice. Chandrowti Sarran keeps the show grounded, informative, and friendly.
+
+It is a Sunday staple that brings neighbors together through radio.`,
+  },
+  {
+    id: "pluginsaturdays",
+    title: "Plugin Saturdays",
+    time: "13:00 - 14:00",
+    host: "The Plugin Crew",
+    image: "/logo.png",
+    days: ["saturday"],
+    bio: `Plugin Saturdays is the midday boost packed with fresh tracks and weekend-ready energy. The Plugin Crew spotlights new sounds, trending artists, and curated mixes.
+
+It is the hour that plugs you into what is hot right now.`,
+  },
+  {
+    id: "sundayvibes",
+    title: "Sunday Vibes",
+    time: "13:00 - 15:00",
+    host: "Bart & Shines",
+    image: "/logo.png",
+    days: ["sunday"],
+    bio: `Sunday Vibes delivers a two-hour blend of soulful selections and easygoing conversation. Bart and Shines keep the pace smooth while celebrating island culture and good company.
+
+It is the perfect soundtrack for a relaxed Sunday afternoon.`,
+  },
+  {
+    id: "meethimasala",
+    title: "Meethi Masala",
+    time: "14:00 - 16:00",
+    host: "Ashwini Sarran",
+    image: "/logo.png",
+    days: ["saturday"],
+    bio: `Meethi Masala brings a vibrant mix of chutney, Bollywood favorites, and cultural flavor. Ashwini Sarran ties it together with stories and shout-outs that feel close to home.
+
+Expect colorful energy and a playlist that celebrates tradition and joy.`,
+  },
+  {
+    id: "calypsosundays",
+    title: "Calypso Sundays",
+    time: "15:00 - 16:00",
+    host: "Roger Hinds",
+    image: "/logo.png",
+    days: ["sunday"],
+    bio: `Calypso Sundays is a one-hour tribute to timeless Caribbean storytelling through music. Roger Hinds spins the classics and highlights the roots of the genre.
+
+It is a vibrant, history-rich hour for true calypso lovers.`,
+  },
+  {
+    id: "quakewave",
+    title: "Quake Wave Show",
+    time: "16:00 - 17:30",
+    host: "Junior Hype",
+    image: "/logo.png",
+    days: ["saturday", "sunday"],
+    bio: `Quake Wave Show is a high-energy blend of party tracks, crowd favorites, and rapid-fire shout-outs. Junior Hype keeps the momentum strong with a nonstop mix that shakes the airwaves.
+
+This is the weekend energy block built for movement and big reactions.`,
+  },
+  {
+    id: "tekinlite",
+    title: "Tekin It Lite",
+    time: "17:30 - 18:30",
+    host: "Chris Gopaul",
+    image: "/logo.png",
+    days: ["saturday", "sunday"],
+    bio: `Tekin It Lite eases the day into the evening with smooth selections and relaxed conversation. Chris Gopaul keeps the tone warm, friendly, and easy to follow.
+
+It is a gentle bridge from afternoon energy into night vibes.`,
+  },
 ];
