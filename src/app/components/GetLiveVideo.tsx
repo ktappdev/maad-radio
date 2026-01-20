@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { isMobile } from "react-device-detect";
 const GetLiveVideo = () => {
   // const [iframeHTML, setIframeHTML] = useState("");
@@ -61,26 +62,60 @@ const GetLiveVideo = () => {
   return (
     <>
       {isLive && !isMobile && (
-        <div className="flex justify-center items-center w-full">
-          <script
-            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
-            nonce="GLMKdyjM"
-            async
-          ></script>
+        <div className="flex flex-col justify-center items-center w-full gap-4">
+          <div className="flex justify-center items-center w-full">
+            <script
+              src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v17.0"
+              nonce="GLMKdyjM"
+              async
+            ></script>
 
-          <div className="fb-video" data-href={videoLink}></div>
+            <div className="fb-video" data-href={videoLink}></div>
+          </div>
+          <a
+            href={videoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1877F2] hover:bg-[#145DB2] text-white text-sm font-semibold transition-colors"
+          >
+            <Image
+              src="/facebook-logo.png"
+              alt="Facebook"
+              width={20}
+              height={20}
+              className="w-5 h-5"
+            />
+            <span>Watch live on Facebook</span>
+          </a>
         </div>
       )}
       {isLive && isMobile && (
-        <div className="flex justify-center items-center w-full">
-          <iframe
-            src={videoLink}
-            width="100%"
-            height="100%"
-            style={{ border: "none", overflow: "hidden" }}
-            allowFullScreen={true}
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe>
+        <div className="flex flex-col justify-center items-center w-full gap-4">
+          <div className="flex justify-center items-center w-full">
+            <iframe
+              src={videoLink}
+              width="100%"
+              height="100%"
+              style={{ border: "none", overflow: "hidden" }}
+              allowFullScreen={true}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            ></iframe>
+          </div>
+          <a
+            href={videoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1877F2] hover:bg-[#145DB2] text-white text-sm font-semibold transition-colors"
+          >
+            <Image
+              src="/facebook-logo.png"
+              alt="Facebook"
+              width={20}
+              height={20}
+              className="w-5 h-5"
+            />
+            <span>Watch live on Facebook</span>
+          </a>
         </div>
       )}
       {!isLive && !isMobile && hasChecked && !isLoading && (
