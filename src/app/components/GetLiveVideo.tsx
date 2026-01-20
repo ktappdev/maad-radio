@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 const GetLiveVideo = () => {
   // const [iframeHTML, setIframeHTML] = useState("");
   const [isLive, setIsLive] = useState(false);
@@ -12,36 +12,34 @@ const GetLiveVideo = () => {
     }
     const fetchIframe = async () => {
       try {
-        const endpoint = "https://graph.facebook.com/maad975/live_videos";
-        const accessToken = process.env.NEXT_PUBLIC_FACEBOOK_ACCESS_TOKEN;
-        const res = await fetch(`${endpoint}?access_token=${accessToken}`, {
-          method: "GET",
-          cache: "no-cache",
-        });
+        const res = await fetch("/api/live-video", { cache: "no-store" });
         const data = await res.json();
-        // setIframeHTML(data.data[0].embed_html);
-        if (data.data[0].status === "LIVE") {
-          console.log("live");
+        const first = data?.data?.[0];
+        if (first && first.status === "LIVE" && first.embed_html) {
           setIsLive(true);
-          let iframe = data.data[0].embed_html.replace(/&amp;/g, "&");
-          let srcParts = iframe.split("src=")[1].split(" ")[0].split("%2F");
-          let videoId = srcParts[srcParts.length - 1];
+          const iframe = first.embed_html.replace(/&amp;/g, "&");
+          const srcParts = iframe.split("src=")[1].split(" ")[0].split("%2F");
+          const videoId = srcParts[srcParts.length - 1];
           setVideoLink(
-            (value) =>
-            (value = `https://www.facebook.com/maad975/videos/${videoId.replace(
-              '"',
-              ""
-            )}`)
+            `https://www.facebook.com/maad975/videos/${videoId.replace('"', "")}`
           );
+        } else {
+          setIsLive(false);
         }
-      } catch (error) { }
+      } catch (error) {
+        setIsLive(false);
+      }
     };
 
     fetchIframe();
-  });
+  }, []);
 
   if (isMobile && isLive) {
-    return <div className='text-xs text-white font-light'>Live Video only on Pc for now</div>
+    return (
+      <div className="text-xs text-white font-light">
+        Live Video only on Pc for now
+      </div>
+    );
   }
   return (
     <>
