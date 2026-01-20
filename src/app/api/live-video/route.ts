@@ -20,6 +20,7 @@ export async function GET() {
 
   url.searchParams.set("access_token", accessToken);
   url.searchParams.set("fields", "embed_html,status");
+  url.searchParams.set("broadcast_status", '["LIVE"]');
   url.searchParams.set("limit", "1");
 
   try {
@@ -51,4 +52,3 @@ export async function GET() {
     );
   }
 }
-

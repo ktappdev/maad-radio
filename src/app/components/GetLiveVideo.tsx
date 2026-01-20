@@ -18,7 +18,12 @@ const GetLiveVideo = () => {
         const res = await fetch("/api/live-video", { cache: "no-store" });
         const data = await res.json();
         const first = data?.data?.[0];
-        if (first && first.status === "LIVE" && first.embed_html) {
+        const isCurrentlyLive =
+          first &&
+          (first.status === "LIVE" || first.status === "LIVE_NOW") &&
+          first.embed_html;
+
+        if (isCurrentlyLive) {
           setIsLive(true);
           const iframe = first.embed_html.replace(/&amp;/g, "&");
           const srcParts = iframe.split("src=")[1].split(" ")[0].split("%2F");
