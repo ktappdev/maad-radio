@@ -1,14 +1,31 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const BannerImage = () => {
-  const [scrollY, setScrollY] = useState(0);
+  const [parallaxOffset, setParallaxOffset] = useState(0);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (!containerRef.current) {
+        return;
+      }
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight || 0;
+      const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+      const clamped = Math.min(1, Math.max(0, progress));
+      const maxShift = rect.height * 0.2;
+      const nextOffset = (clamped - 0.5) * 2 * maxShift;
+      setParallaxOffset(nextOffset);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   // Function to trigger bottom player
@@ -26,12 +43,14 @@ const BannerImage = () => {
   };
 
   return (
-    <div className="w-full h-[400px] md:h-[600px] relative overflow-hidden group rounded-2xl border border-white/5">
-      {/* Parallax Background */}
+    <div
+      ref={containerRef}
+      className="w-full h-[400px] md:h-[600px] relative overflow-hidden group rounded-2xl border border-white/5"
+    >
       <div
-        className="absolute inset-0 scale-110"
+        className="absolute inset-0"
         style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
+          transform: `translateY(${parallaxOffset}px) scale(1.1)`,
         }}
       >
         <Image
@@ -45,7 +64,6 @@ const BannerImage = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
 
-      {/* Content */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center space-y-6 px-6 max-w-4xl">
           <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white text-shadow leading-tight">
