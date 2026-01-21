@@ -76,11 +76,13 @@ const GetLiveVideo = () => {
       {isLive && !isMobile && (
         <div className="flex flex-col justify-center items-center w-full gap-4">
           {embedUrl && (
-            <div className="flex justify-center items-center w-full">
+            <div
+              className="w-full max-w-4xl"
+              style={{ aspectRatio: "16 / 9" }}
+            >
               <iframe
                 src={embedUrl}
-                width="100%"
-                height="100%"
+                className="w-full h-full"
                 style={{ border: "none", overflow: "hidden" }}
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
@@ -107,11 +109,13 @@ const GetLiveVideo = () => {
       {isLive && isMobile && (
         <div className="flex flex-col justify-center items-center w-full gap-4">
           {embedUrl && (
-            <div className="flex justify-center items-center w-full">
+            <div
+              className="w-full max-w-4xl"
+              style={{ aspectRatio: "16 / 9" }}
+            >
               <iframe
                 src={embedUrl}
-                width="100%"
-                height="100%"
+                className="w-full h-full"
                 style={{ border: "none", overflow: "hidden" }}
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
