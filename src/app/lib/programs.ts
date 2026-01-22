@@ -5,6 +5,7 @@ export const programs = [
     time: "05:00 - 07:00",
     host: "Di Market Evangelist",
     image: "/personalities/market.jpg",
+    image2: "/personalities/market1.jpg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     bio: `Praise the Most High, it's time for "Holy Ghost Power & Light," hosted by none other than the unapologetically real Market Evangelist! From the sacred hours of 4-7am, Monday to Friday, we gather 'round for a no-nonsense journey of gospel preaching and teaching.
 
@@ -71,7 +72,7 @@ So, as the sun sets and the evening begins, tune in to "The Meltdown" and let An
     title: "The Frontline Show",
     time: "10:00 - 12:00",
     host: "Chow Pow & DJ Fifty",
-    image: "/logo.png",
+    image: "/personalities/frontline.jpg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     bio: `The Frontline Show is your mid-morning pulse check, blending headlines, community talk, and the hottest requests. Chow Pow and DJ Fifty keep the energy sharp with real-time updates, guest shout-outs, and a steady stream of island hits.
 
@@ -104,7 +105,7 @@ From the first drop to the last fade, ShadyVille keeps the pace steady and the m
     title: "Farrakhan Message",
     time: "14:00 - 15:00",
     host: "The Message Desk",
-    image: "/logo.png",
+    image: "/farrakhan.jpeg",
     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     bio: `Farrakhan Message is a reflective hour centered on community, faith, and motivation. The show focuses on spoken-word insight, guided discussion, and thoughtful takeaways for daily life.
 
@@ -289,11 +290,19 @@ It is a vibrant, history-rich hour for true calypso lovers.`,
     title: "Quake Wave Show",
     time: "16:00 - 17:30",
     host: "Junior Hype",
-    image: "/logo.png",
+    image: "/personalities/hype.jpg",
+    image2: "/personalities/hype2.jpg",
     days: ["saturday", "sunday"],
-    bio: `Quake Wave Show is a high-energy blend of party tracks, crowd favorites, and rapid-fire shout-outs. Junior Hype keeps the momentum strong with a nonstop mix that shakes the airwaves.
+    bio: `Junior Hype is a passionate DJ and selector with Earthquake Sound International, bringing the high-energy Quake Wave Show to MAAD 97.5 FM each weekend. The show is built for the station's listeners who want real vibes, big selections, and the kind of energy that keeps MAAD feeling live from start to finish.
 
-This is the weekend energy block built for movement and big reactions.`,
+His love for music started early with his mother, a gifted singer who introduced him to the artistes of the era and taught him the foundation of selecting. With his father running Tidal Wave Sound System (now Earthquake Sound), Junior grew up backstage and in speaker boxes, absorbing the culture at gigs across the city while sharpening his craft from the cassette era to CDs.
+
+At 19 he stepped away for eight years to focus on computer and phone services, but he stayed connected through online radio. Today he is fully back and proud to represent MAAD 97.5 FM with a show that feels rooted, authentic, and community-centered.
+For MAAD, he treats every set like a live link to the community, keeping the station's sound rich with culture and history. It is another voice in the lineup that reminds listeners why MAAD stays different.
+
+On Quake Wave, Junior spins tracks you do not hear every day, keeps the entertainment tight, and delivers positive messages that bring back the heart of the music. It is a pure love-for-the-culture experience, powered by MAAD and made for the people who keep the station moving.
+
+Connect with him: Instagram @djjuniorhype_gy. Earthquake Sound International is on Facebook at facebook.com/EarthquakeInternational and facebook.com/groups/EARTHQUAKEINTERNATIONALSOUND.`,
   },
   {
     id: "tekinlite",
