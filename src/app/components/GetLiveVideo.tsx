@@ -139,11 +139,6 @@ const GetLiveVideo = () => {
           </a>
         </div>
       )}
-      {!isLive && !isMobile && hasChecked && !isLoading && (
-        <div className="flex justify-center items-center w-full text-xs text-white font-light">
-          No live video right now
-        </div>
-      )}
     </>
   )
 };
