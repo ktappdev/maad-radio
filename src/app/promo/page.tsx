@@ -95,7 +95,7 @@ export default function PromoPage() {
             <div className="bg-white border-4 border-[#186A3B] rounded-2xl p-8 shadow-[8px_8px_0px_rgba(24,106,59,0.15)]">
               <h3 className="text-[#186A3B] text-2xl font-extrabold mb-6 text-center">Scan to Listen Instantly</h3>
               <Image 
-                src="/maad97.5-qr.png" 
+                src="/maad_player_qr.png" 
                 alt="MAAD 97.5 QR Code" 
                 width={300} 
                 height={300}
