@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['600', '800'],
+  weight: ['600', '700', '800'],
   display: 'swap',
 });
 
@@ -13,108 +13,98 @@ export default function PromoPage() {
   return (
     <main className={`min-h-screen bg-[#F8F9FA] ${montserrat.className}`}>
       {/* Header */}
-      <header>
-        <div className="bg-[#111111] py-4 px-6">
-          <h1 className="text-white text-2xl font-extrabold tracking-wider">MAAD 97.5 FM</h1>
+      <header className="overflow-hidden">
+        <div className="bg-[#111111] py-5 px-6">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-white text-3xl font-extrabold tracking-[0.15em]">MAAD 97.5 FM</h1>
+          </div>
         </div>
-        <div className="bg-[#FFD700] h-12 relative">
-          <div className="absolute inset-0 bg-[#FFD700] skew-y-1 origin-top-left"></div>
+        <div className="h-16 bg-[#FFD700] relative">
+          <div className="absolute inset-0 bg-[#FFD700] skew-y-[1.5deg] origin-top-left shadow-inner"></div>
         </div>
       </header>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 items-start">
           
           {/* Left Cards Column */}
           <div>
-            <h2 className="text-[#111111] text-3xl font-extrabold mb-8">Listen Anywhere</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2 className="text-[#111111] text-4xl font-extrabold mb-10 leading-tight">Listen Now On Your Device</h2>
 
-            {/* Card 1 - Google Play */}
-            <a 
-              href="https://play.google.com/store/apps/details?id=radio.broadcast.maad975fm.player"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block bg-white border-4 border-[#186A3B] rounded-xl p-4 relative transition-transform hover:-translate-y-1 shadow-[4px_4px_0px_rgba(0,0,0,0.1)]"
-            >
-              <div className="absolute -top-3 -left-3 bg-[#186A3B] text-white w-8 h-8 rounded-full flex items-center justify-center font-extrabold">1</div>
-              <div className="flex items-center gap-4 pl-6">
-                <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" width={140} height={48} />
-                <div>
-                  <p className="text-sm font-semibold text-[#111111]">Download on</p>
-                  <p className="font-extrabold text-lg">Google Play</p>
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-xl">
+              {/* Card 1 - Google Play */}
+              <a 
+                href="https://play.google.com/store/apps/details?id=radio.broadcast.maad975fm.player"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-white border-4 border-[#186A3B] rounded-2xl p-6 relative transition-all duration-200 hover:-translate-y-2 hover:shadow-[8px_8px_0px_rgba(24,106,59,0.2)] shadow-[4px_4px_0px_rgba(0,0,0,0.08)]"
+              >
+                <div className="absolute -top-4 -left-4 bg-[#186A3B] text-white w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-lg shadow-md">1</div>
+                <div className="flex items-center gap-5 pl-6">
+                  <Image 
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                    alt="Get it on Google Play" 
+                    width={180} 
+                    height={68}
+                    className="h-[68px] w-auto"
+                  />
                 </div>
-              </div>
-            </a>
+              </a>
 
-            {/* Card 2 - App Store */}
-            <a 
-              href="https://apps.apple.com/us/app/maad-97-5-fm/id6761002546"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block bg-white border-4 border-[#186A3B] rounded-xl p-4 relative transition-transform hover:-translate-y-1 shadow-[4px_4px_0px_rgba(0,0,0,0.1)]"
-            >
-              <div className="absolute -top-3 -left-3 bg-[#186A3B] text-white w-8 h-8 rounded-full flex items-center justify-center font-extrabold">2</div>
-              <div className="flex items-center gap-4 pl-6">
-                <Image src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" width={140} height={48} />
-                <div>
-                  <p className="text-sm font-semibold text-[#111111]">Download on</p>
-                  <p className="font-extrabold text-lg">App Store</p>
+              {/* Card 2 - App Store */}
+              <a 
+                href="https://apps.apple.com/us/app/maad-97-5-fm/id6761002546"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-white border-4 border-[#186A3B] rounded-2xl p-6 relative transition-all duration-200 hover:-translate-y-2 hover:shadow-[8px_8px_0px_rgba(24,106,59,0.2)] shadow-[4px_4px_0px_rgba(0,0,0,0.08)]"
+              >
+                <div className="absolute -top-4 -left-4 bg-[#186A3B] text-white w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-lg shadow-md">2</div>
+                <div className="flex items-center gap-5 pl-6">
+                  <Image 
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                    alt="Download on the App Store" 
+                    width={180} 
+                    height={68}
+                    className="h-[68px] w-auto"
+                  />
                 </div>
-              </div>
-            </a>
+              </a>
 
-            {/* Card 3 - TuneIn */}
-            <a 
-              href="http://tun.in/sfL9k"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block bg-white border-4 border-[#186A3B] rounded-xl p-4 relative transition-transform hover:-translate-y-1 shadow-[4px_4px_0px_rgba(0,0,0,0.1)]"
-            >
-              <div className="absolute -top-3 -left-3 bg-[#186A3B] text-white w-8 h-8 rounded-full flex items-center justify-center font-extrabold">3</div>
-              <div className="flex items-center gap-4 pl-6">
-                <div className="w-14 h-14 bg-[#1C9A8B] rounded-lg flex items-center justify-center text-white text-2xl">📻</div>
-                <div>
-                  <p className="text-sm font-semibold text-[#111111]">Listen on</p>
-                  <p className="font-extrabold text-lg">TuneIn</p>
+              {/* Card 3 - TuneIn */}
+              <a 
+                href="http://tun.in/sfL9k"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-white border-4 border-[#186A3B] rounded-2xl p-6 relative transition-all duration-200 hover:-translate-y-2 hover:shadow-[8px_8px_0px_rgba(24,106,59,0.2)] shadow-[4px_4px_0px_rgba(0,0,0,0.08)]"
+              >
+                <div className="absolute -top-4 -left-4 bg-[#186A3B] text-white w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-lg shadow-md">3</div>
+                <div className="flex items-center gap-5 pl-6">
+                  <div className="w-16 h-16 bg-[#1C9A8B] rounded-xl flex items-center justify-center text-white text-3xl shadow-sm">📻</div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600">Listen on</p>
+                    <p className="font-extrabold text-2xl text-[#111111]">TuneIn</p>
+                  </div>
                 </div>
-              </div>
-            </a>
-
-            {/* Card 4 - Website */}
-            <a 
-              href="https://www.maad97.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block bg-white border-4 border-[#186A3B] rounded-xl p-4 relative transition-transform hover:-translate-y-1 shadow-[4px_4px_0px_rgba(0,0,0,0.1)]"
-            >
-              <div className="absolute -top-3 -left-3 bg-[#186A3B] text-white w-8 h-8 rounded-full flex items-center justify-center font-extrabold">4</div>
-              <div className="flex items-center gap-4 pl-6">
-                <div className="w-14 h-14 bg-[#1C9A8B] rounded-lg flex items-center justify-center text-white text-2xl">🌐</div>
-                <div>
-                  <p className="text-sm font-semibold text-[#111111]">Visit Our</p>
-                  <p className="font-extrabold text-lg">Website</p>
-                </div>
-              </div>
-            </a>
+              </a>
             </div>
           </div>
 
           {/* Right QR Column */}
-          <div className="flex flex-col items-center justify-start">
-            <h3 className="text-[#186A3B] text-2xl font-extrabold mb-6">Scan to Listen</h3>
-            <div className="bg-white border-4 border-[#186A3B] rounded-xl p-6 shadow-[4px_4px_0px_rgba(0,0,0,0.1)]">
+          <div className="flex flex-col items-center justify-center lg:sticky lg:top-12">
+            <div className="bg-white border-4 border-[#186A3B] rounded-2xl p-8 shadow-[8px_8px_0px_rgba(24,106,59,0.15)]">
+              <h3 className="text-[#186A3B] text-2xl font-extrabold mb-6 text-center">Scan to Listen Instantly</h3>
               <Image 
                 src="/maad97.5-qr.png" 
                 alt="MAAD 97.5 QR Code" 
-                width={280} 
-                height={280}
-                className="rounded-lg"
+                width={300} 
+                height={300}
+                className="rounded-xl"
+                priority
               />
             </div>
-            <p className="mt-6 text-center font-semibold text-[#111111] max-w-xs">
-              Scan this QR code with your phone camera to open MAAD 97.5 FM directly.
+            <p className="mt-8 text-center font-semibold text-gray-600 max-w-sm text-lg">
+              Point your phone camera at this QR code to open MAAD 97.5 FM immediately.
             </p>
           </div>
 
@@ -122,13 +112,13 @@ export default function PromoPage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-[#111111] py-8 px-6 mt-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex gap-6 text-white text-2xl">
-            <a href="#" className="hover:text-[#FFD700] transition-colors">📘</a>
-            <a href="#" className="hover:text-[#FFD700] transition-colors">📷</a>
+      <footer className="bg-[#111111] py-10 px-6 mt-16">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex gap-8 text-white text-3xl">
+            <a href="#" className="hover:text-[#FFD700] transition-colors duration-200">📘</a>
+            <a href="#" className="hover:text-[#FFD700] transition-colors duration-200">📷</a>
           </div>
-          <p className="text-white text-sm font-semibold">© {new Date().getFullYear()} MAAD 97.5 FM. All rights reserved.</p>
+          <p className="text-white text-base font-semibold">© {new Date().getFullYear()} MAAD 97.5 FM. All rights reserved.</p>
         </div>
       </footer>
     </main>
