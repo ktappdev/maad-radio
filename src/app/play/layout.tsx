@@ -1,4 +1,4 @@
-import '../../globals.css';
+import '../globals.css';
 
 export const metadata = {
   title: 'MAAD 97.5 FM | Listen Live',
