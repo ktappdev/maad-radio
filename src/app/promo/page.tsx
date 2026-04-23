@@ -88,11 +88,11 @@ export default function PromoPage() {
               <div className="absolute -top-3 -left-3 bg-[#186A3B] text-white w-8 h-8 rounded-full flex items-center justify-center font-extrabold shadow-md">3</div>
               <div className="flex flex-col items-center justify-center gap-2 pt-2">
                 <Image 
-                  src="/tunein-logo.webp" 
+                  src="/tunein.webp" 
                   alt="TuneIn" 
                   width={80} 
                   height={40}
-                  className="h-10 w-auto"
+                  className="h-12 w-auto"
                 />
                 <p className="font-extrabold text-xl text-[#111111]">TuneIn</p>
               </div>
