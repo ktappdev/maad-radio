@@ -85,12 +85,12 @@ const Schedule = () => {
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Enhanced Header */}
       <div className="text-center mb-12">
-        <h1
+        <h2
           id="schedule"
           className="font-bold text-4xl sm:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text mb-4 tracking-wide text-shadow"
         >
           FEATURED SHOWS
-        </h1>
+        </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] mx-auto rounded-full"></div>
       </div>
 
