@@ -36,7 +36,7 @@ const Header = () => {
         >
           <Image
             src="/logo.png"
-            alt="logo"
+            alt="Maad 97.5 FM"
             width={40}
             height={40}
             className="drop-shadow-md"

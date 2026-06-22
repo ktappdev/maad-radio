@@ -12,6 +12,9 @@ const domain = process.env.NEXT_PUBLIC_DOMAIN || "https://www.maad97.com";
 export const metadata: Metadata = {
   title: "Maad 97.5 FM - Is We Own GUYANA!",
   metadataBase: new URL(domain),
+  alternates: {
+    canonical: "/",
+  },
   description:
     "Maad 97.5FM - Guyana's top radio station, is your go-to destination for a diverse auditory experience. Explore the best in music, news, talk shows, and cultural programming that reflects the essence of Guyanese life.",
   keywords: [
