@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       {
         url: `${domain}/logo.png`,
         width: 800,
-        height: 600,
+        height: 800,
         alt: "Maad 97.5 FM Logo",
       },
     ],
@@ -52,6 +52,7 @@ export const metadata: Metadata = {
     description:
       "Guyana's top radio station for music, news, and cultural programming",
     images: [`${domain}/logo.png`],
+    site: "@maad975fm",
     creator: "@maad975fm",
   },
   robots: {
