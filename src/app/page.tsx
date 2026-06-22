@@ -142,6 +142,37 @@ export default function Home() {
       <div className="w-full max-w-6xl shadow-2xl shadow-black/40 transition-shadow duration-300 rounded-2xl overflow-hidden border border-white/5">
         <BannerImage />
       </div>
+
+      {/* About Section */}
+      <section id="about" className="w-full">
+        <div className="glass-dark rounded-3xl px-8 md:px-12 py-16 border border-white/5">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text tracking-wide">
+              About Us
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] rounded-full"></div>
+            <p className="text-lg sm:text-xl text-gray-300 font-light max-w-3xl leading-relaxed">
+              Brutal Group Incorporated is renowned for producing and promoting
+              Guyanese music and culture. To further achieve the company&rsquo;s vision,
+              MAAD 97.5 FM was created. As Guyana&rsquo;s premier multimedia radio
+              station, the capabilities of MAAD 97.5 FM are unmatched!
+            </p>
+            <p className="text-lg sm:text-xl text-gray-300 font-light max-w-3xl leading-relaxed">
+              Our station facilitates live video and audio broadcasts across
+              multiple platforms to give our listeners and viewers the best
+              experience.
+            </p>
+            <p className="text-lg sm:text-xl text-white font-medium max-w-3xl leading-relaxed">
+              MAAD 97.5 FM aims to build a thriving community of loyal and
+              educated Guyanese by providing music, events, conversations, ideas
+              and information of the highest standard. Our goal is to enrich our
+              listeners&rsquo; lives, strengthen communities, and showcase Guyana to the
+              world.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="schedule">
         <h2 className="sr-only">Program Schedule</h2>
         <Schedule />
