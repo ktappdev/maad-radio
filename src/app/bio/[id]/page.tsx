@@ -43,6 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       } hrs for ${program.title} on Maad 97.5 FM`,
       images: [program.image],
     },
+    alternates: {
+      canonical: `/bio/${params.id}`,
+    },
   };
 }
 

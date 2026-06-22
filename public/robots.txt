@@ -1,3 +1,30 @@
 User-agent: *
 Allow: /
-Sitemap: https://maad975fm.com/sitemap.xml
+
+# AI Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Block API routes from indexing
+User-agent: *
+Disallow: /api/
+
+Sitemap: https://www.maad97.com/sitemap.xml

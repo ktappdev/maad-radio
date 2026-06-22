@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Privacy Policy - Maad 97.5 FM",
   description:
     "Privacy Policy for Maad 97.5 FM. Learn how we collect, use, and protect your information when you visit our website or use our services.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN || "https://www.maad97.com"),
+  alternates: {
+    canonical: "/privacy",
+  },
   openGraph: {
     title: "Privacy Policy - Maad 97.5 FM",
     description:
