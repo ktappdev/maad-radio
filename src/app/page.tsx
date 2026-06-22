@@ -97,6 +97,7 @@ export default function Home() {
 
         {/* Enhanced Banner with Typewriter Effect */}
         <div className="text-center space-y-4">
+          <h1 className="sr-only">MAAD 97.5 FM - Guyana&apos;s Top Radio Station</h1>
           <div className="transition-transform duration-300 hover:scale-[1.01]">
             <Banner text="MAAD 97.5 FM" text2="" />
           </div>
