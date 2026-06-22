@@ -60,6 +60,12 @@ const Header = () => {
         >
           Contact
         </button>
+        <Link
+          href="/privacy"
+          className="hover:text-[#FD7B2B] transition-colors duration-200 text-base sm:text-lg font-medium"
+        >
+          Privacy
+        </Link>
       </div>
     </div>
   );
