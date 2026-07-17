@@ -1,0 +1,25 @@
+{
+  "id": "explorer",
+  "pid": 40713,
+  "cwd": "/Users/kentaylor/developer/maad-radio",
+  "parent": "coordinator",
+  "role": "explorer",
+  "sessionFile": "/Users/kentaylor/.pi/agent/sessions/--Users-kentaylor-developer-maad-radio--/2026-07-17T17-39-37-220Z_019f7129-9084-7126-93bc-197a378af395.jsonl",
+  "state": "done",
+  "status": "running",
+  "holdReason": null,
+  "obligations": [],
+  "owed": [],
+  "barriers": [],
+  "startedAt": "2026-07-17T17:39:41.764Z",
+  "lastSeen": "2026-07-17T18:03:41.959Z",
+  "updatedAt": "2026-07-17T18:03:41.959Z",
+  "capabilities": [
+    "urgency",
+    "barriers",
+    "deliverAfter",
+    "expiresAt",
+    "journal",
+    "canary"
+  ]
+}

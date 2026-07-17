@@ -1,0 +1,25 @@
+{
+  "id": "worker-1",
+  "pid": 34935,
+  "cwd": "/Users/kentaylor/developer/maad-radio",
+  "parent": "coordinator",
+  "role": "worker",
+  "sessionFile": "/Users/kentaylor/.pi/agent/sessions/--Users-kentaylor-developer-maad-radio--/2026-07-17T16-51-56-487Z_019f70fd-e9c7-798a-b626-f7962d10a4c8.jsonl",
+  "state": "done",
+  "status": "stopped",
+  "holdReason": null,
+  "obligations": [],
+  "owed": [],
+  "barriers": [],
+  "startedAt": "2026-07-17T16:52:00.729Z",
+  "lastSeen": "2026-07-17T17:25:06.259Z",
+  "updatedAt": "2026-07-17T17:25:06.259Z",
+  "capabilities": [
+    "urgency",
+    "barriers",
+    "deliverAfter",
+    "expiresAt",
+    "journal",
+    "canary"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "builder/01KXRJWJC16CHBX8Y07BYWM90K",
+  "from": "builder",
+  "to": "coordinator",
+  "body": "Done. Here's the report.\n\n## Files Changed\n\n### 1. `src/app/api/live-video/route.ts` — NO CHANGES\nAlready at `v24.0` (line 18), even newer than requested `v23.0`. Graph API version is current. No action needed.\n\n### 2. `src/app/components/GetLiveVideo.tsx` — 6 edits applied\n\n| Fix | Lines (new) | Change |\n|-----|-------------|--------|\n| **Remove isMobile import** | line 3 (removed) | `isMobile` no longer used after dedup |\n| **Add error state** | line 12 | `const [error, setError] = useState<string \\| null>(null);` |\n| **Remove mobile early return** | ~lines 17-19 (removed) | `if (isMobile) { return; }` deleted — fetch now runs on mobile too |\n| **Clear error on retry** | line 19 | `setError(null);` added after `setIsLoading(true);` so stale errors clear on re-fetch |\n| **Set error in catch** | line 52 | `setError(\"Unable to load live video. Try again later.\");` added, keeps `console.error` |\n| **Deduplicate JSX + add error render** | lines 68-105 | Removed `isMobile && isLive` early return (\"Live Video only on Pc for now\"), removed `!isMobile`/`isMobile` conditional duplication, single `{isLive && ...}` block for all devices. Added `{error && ...}` above it with brand orange `#FD7B2B` |\n\n## Verification\n\n- `npm run lint` → ✔ No ESLint warnings or errors\n- `npx tsc --noEmit` → ✔ Clean (no output)\n\n## Concerns\n\nNone. `v24.0` is active Graph API version. The `live_videos` endpoint path unchanged. Access token env vars untouched. Embed mechanism preserved.",
+  "sentAt": "2026-07-17T17:44:46.722Z",
+  "re": "coordinator/01KXRJTFV85P8C7QDA4JAVPGPT"
+}

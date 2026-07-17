@@ -1,0 +1,8 @@
+{
+  "id": "coordinator/01KXRJKPVT038T3WDJMW5F2M6S",
+  "from": "coordinator",
+  "to": "explorer",
+  "body": "Objective: Find why Facebook Live video no longer loads on the Maad 97.5 FM site.\n\nContext: Next.js 13 app. Facebook video component is `src/app/components/GetLiveVideo.tsx`. It integrates Facebook Live video embed. User reports video stopped loading.\n\nAction Steps:\n1. Read `src/app/components/GetLiveVideo.tsx` fully.\n2. Grep for where GetLiveVideo is imported/used (layout, pages).\n3. Check for Facebook SDK script loading, iframe/embed URL construction, any hardcoded page IDs or access tokens.\n4. Look for recent git log changes touching GetLiveVideo.tsx or related files: `git log --oneline -20 -- src/app/components/GetLiveVideo.tsx` and `git log --oneline -20`.\n5. Check if Facebook embed URL/SDK URL is still valid format. Note any deprecated patterns (e.g. old FB plugin URLs, missing SDK init).\n6. Report file:line references for the embed mechanism and any suspicious code.\n\nDeliverables: Root cause hypothesis with file:line refs. Note the exact Facebook embed mechanism used (iframe vs SDK vs plugin), the page ID/channel referenced, and what likely broke (URL format, deprecated API, missing SDK, CSP, etc.). Do NOT fix anything — read-only investigation.\n\nPrerequisites: `src/app/components/GetLiveVideo.tsx`, `src/app/layout.tsx`, and any importer files.",
+  "sentAt": "2026-07-17T17:39:56.410Z",
+  "expects": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "builder/01KXRK466EJWR6BD1RWH8D5B0P",
+  "from": "builder",
+  "to": "coordinator",
+  "body": "Done. All three critical fixes applied, lint + tsc clean.\n\n## Changes Made\n\n### Fix 1 — Silent empty-response fallback (`GetLiveVideo.tsx:76-80`)\nAdded \"not live\" fallback render after error block:\n```\n{hasChecked && !isLive && !isLoading && !error && (\n  <div className=\"text-sm text-[#FD7B2B] font-medium text-center py-2\">\n    We're not live right now — check back soon.\n  </div>\n)}\n```\n`hasChecked` already existed (set in finally). Now when API returns 200 with no live videos, user sees message instead of blank. Renders only when fetch completed, not live, not loading, no error.\n\n### Fix 2 — Remove broken broadcast_status param (`route.ts:22`)\nDeleted `url.searchParams.set(\"broadcast_status\", '[\"LIVE\"]')`. Now fetching all recent videos unfiltered from server side. Client-side already checks `first.status === \"LIVE\" || first.status === \"LIVE_NOW\"` (line 26 of GetLiveVideo.tsx), so filtering still works — just without the URL-encoded JSON array that may confuse Graph API.\n\n### Fix 3 — Guard empty videoLink (`GetLiveVideo.tsx:97`)\nWrapped `<a>` in `{videoLink && (...)}`. When `videoLink` is `\"\"` (no href extracted from embed), the Facebook link button no longer renders as a broken self-referencing link.\n\n## Verification\n- `npm run lint` → ✔ No ESLint warnings or errors\n- `npx tsc --noEmit` → ✔ Clean\n\n## Files Changed\n- `src/app/components/GetLiveVideo.tsx` — lines 76-80 (fix 1), line 97 (fix 3)\n- `src/app/api/live-video/route.ts` — line 22 removed (fix 2)",
+  "sentAt": "2026-07-17T17:48:56.399Z",
+  "re": "coordinator/01KXRK39C2C32YHRGGMTHRHKXY"
+}

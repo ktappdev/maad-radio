@@ -15,12 +15,11 @@ export async function GET() {
   }
 
   const url = new URL(
-    `https://graph.facebook.com/v19.0/${PAGE_ID}/live_videos`
+    `https://graph.facebook.com/v24.0/${PAGE_ID}/live_videos`
   );
 
   url.searchParams.set("access_token", accessToken);
   url.searchParams.set("fields", "embed_html,status");
-  url.searchParams.set("broadcast_status", '["LIVE"]');
   url.searchParams.set("limit", "1");
 
   try {
@@ -32,6 +31,10 @@ export async function GET() {
     const data = await res.json();
 
     if (!res.ok) {
+      console.error(
+        "[live-video] Facebook Graph error:",
+        JSON.stringify({ status: res.status, data })
+      );
       return NextResponse.json(
         {
           error: "FacebookGraphError",
@@ -43,6 +46,8 @@ export async function GET() {
         { status: res.status }
       );
     }
+
+    console.log("[live-video] Facebook Graph success, videos found:", data?.data?.length ?? 0);
 
     return NextResponse.json(data);
   } catch (error) {
