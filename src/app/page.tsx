@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Banner from "./components/Banner";
 import BannerImage from "./components/BannerImage";
 import ContactSection from "./components/Socials";
@@ -9,45 +9,18 @@ import GetLiveVideo from "./components/GetLiveVideo";
 import { ContactUs } from "./components/ContactUs";
 import Image from "next/image";
 
+const texts = ["IS WE OWN", "GUYANESE"];
+
 export default function Home() {
-  const [currentText, setCurrentText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
 
-  const texts = useMemo(() => ["IS WE OWN", "GUYANESE"], []);
-
   useEffect(() => {
-    const currentFullText = texts[textIndex];
-
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting) {
-          // Typing
-          if (currentIndex < currentFullText.length) {
-            setCurrentText(currentFullText.substring(0, currentIndex + 1));
-            setCurrentIndex(currentIndex + 1);
-          } else {
-            // Finished typing, wait then start deleting
-            setTimeout(() => setIsDeleting(true), 2000);
-          }
-        } else {
-          // Deleting
-          if (currentIndex > 0) {
-            setCurrentText(currentFullText.substring(0, currentIndex - 1));
-            setCurrentIndex(currentIndex - 1);
-          } else {
-            // Finished deleting, move to next text
-            setIsDeleting(false);
-            setTextIndex((textIndex + 1) % texts.length);
-          }
-        }
-      },
-      isDeleting ? 50 : 150
-    ); // Faster deleting, slower typing
-
-    return () => clearTimeout(timeout);
-  }, [currentIndex, isDeleting, textIndex, texts]);
+    const interval = setInterval(
+      () => setTextIndex((i) => (i + 1) % texts.length),
+      3000
+    );
+    return () => clearInterval(interval);
+  }, []);
 
   // Function to scroll to schedule section
   const scrollToSchedule = () => {
@@ -74,7 +47,8 @@ export default function Home() {
     }
   };
   return (
-    <main className="flex w-full min-h-screen flex-col items-center pt-24 px-4 sm:px-6 lg:px-8 gap-12 bg-[#0b0b0b] relative overflow-hidden">
+    <main className="flex w-full min-h-screen flex-col items-center pt-24 px-4 sm:px-6 lg:px-8 bg-[#0b0b0b] relative overflow-hidden">
+      <style>{`@keyframes fadeSlide { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } } .fade-slide { animation: fadeSlide 0.5s ease both; }`}</style>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-24 left-8 w-28 h-28 bg-[#FD7B2B]/6 rounded-full blur-3xl"></div>
         <div className="absolute bottom-32 right-8 w-40 h-40 bg-[#FD7B2B]/6 rounded-full blur-3xl"></div>
@@ -95,15 +69,15 @@ export default function Home() {
           />
         </div>
 
-        {/* Enhanced Banner with Typewriter Effect */}
+        {/* Enhanced Banner with Fade Transition */}
         <div className="text-center space-y-4">
           <h1 className="sr-only">MAAD 97.5 FM - Guyana&apos;s Top Radio Station</h1>
           <div className="transition-transform duration-300 hover:scale-[1.01]">
             <Banner text="MAAD 97.5 FM" text2="" />
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#FD7B2B] min-h-[1.2em] flex items-center justify-center">
-            <span className="border-r-2 border-[#FD7B2B] pr-1">
-              {currentText}
+            <span key={textIndex} className="fade-slide">
+              {texts[textIndex]}
             </span>
           </div>
         </div>
@@ -140,7 +114,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="w-full max-w-6xl shadow-2xl shadow-black/40 transition-shadow duration-300 rounded-2xl overflow-hidden border border-white/5">
+      <div className="w-full max-w-6xl my-12 shadow-2xl shadow-black/40 transition-shadow duration-300 rounded-2xl overflow-hidden border border-white/5">
         <BannerImage />
       </div>
 
@@ -174,18 +148,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="schedule">
+      <section id="schedule" className="w-full">
         <h2 className="sr-only">Program Schedule</h2>
         <Schedule />
       </section>
-      <div className="transition-transform duration-300 hover:scale-[1.01]">
+      <div className="my-12 transition-transform duration-300 hover:scale-[1.01]">
         <Banner text="STAY TUNED" text2="" />
       </div>
-      <div className="flex h-60 w-full flex-col justify-between gap-6 items-center px-8 md:px-12">
+      <div
+        className="w-full max-w-4xl mx-auto px-4 my-12"
+        style={{ aspectRatio: "16 / 9" }}
+      >
         <Youtube videoId={"SjQh0x5AYCw"} />
       </div>
+
       {/* Enhanced Contact Section */}
-      <div className="w-full max-w-6xl glass-dark rounded-3xl px-8 md:px-12 py-16 text-center relative overflow-hidden border border-white/5">
+      <section className="w-full max-w-6xl glass-dark rounded-3xl px-8 md:px-12 py-16 text-center relative overflow-hidden border border-white/5">
         <div className="absolute inset-0 bg-gradient-to-br from-white/2 via-transparent to-[#FD7B2B]/5"></div>
 
         <div className="relative z-10">
@@ -200,58 +178,60 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mb-12">
-            <ContactUs />
-          </div>
+          <ContactUs />
+        </div>
+      </section>
 
-          {/* ReviewIt Widget */}
-          <div className="w-full overflow-visible">
-            <div id="reviewit-widget-cb91048e-5af3-438b-afa4-705cb41699cb" className="w-full overflow-visible"></div>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function() {
-                    var script = document.createElement('script');
-                    script.src = 'https://reviewit.gy/widgets/embed.js';
-                    script.async = true;
-                    script.onload = function() {
-                      new ReviewItWidget({
-                        widgetId: 'cb91048e-5af3-438b-afa4-705cb41699cb',
-                        container: 'reviewit-widget-cb91048e-5af3-438b-afa4-705cb41699cb'
-                      });
-                    };
-                    document.head.appendChild(script);
-                  })();
-                `,
-              }}
+      {/* Reviews Section */}
+      <section className="w-full max-w-6xl glass-dark rounded-3xl px-8 md:px-12 py-12 text-center relative overflow-hidden border border-white/5 mt-12">
+        <div className="relative z-10 w-full overflow-visible">
+          <div id="reviewit-widget-cb91048e-5af3-438b-afa4-705cb41699cb" className="w-full overflow-visible"></div>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  var script = document.createElement('script');
+                  script.src = 'https://reviewit.gy/widgets/embed.js';
+                  script.async = true;
+                  script.onload = function() {
+                    new ReviewItWidget({
+                      widgetId: 'cb91048e-5af3-438b-afa4-705cb41699cb',
+                      container: 'reviewit-widget-cb91048e-5af3-438b-afa4-705cb41699cb'
+                    });
+                  };
+                  document.head.appendChild(script);
+                })();
+              `,
+            }}
+          />
+        </div>
+      </section>
+
+      {/* Enhanced Promo Image */}
+      <section className="w-full max-w-6xl mx-auto py-12">
+        <div className="w-full h-auto group">
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-black/40 border border-white/5">
+            <Image
+              alt="MAAD 97.5 FM Promo"
+              src="/maad-promo.jpg"
+              width={900}
+              height={500}
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </div>
-
-          {/* Enhanced Promo Image */}
-          <div className="w-full h-auto group">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-black/40 border border-white/5">
-              <Image
-                alt="MAAD 97.5 FM Promo"
-                src="/maad-promo.jpg"
-                width={900}
-                height={500}
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="text-white text-center space-y-4">
-                  <h3 className="text-2xl sm:text-3xl font-bold">
-                    MAAD 97.5 FM
-                  </h3>
-                  <p className="text-lg">Is We Own!</p>
-                </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="text-white text-center space-y-4">
+                <h3 className="text-2xl sm:text-3xl font-bold">
+                  MAAD 97.5 FM
+                </h3>
+                <p className="text-lg">Is We Own!</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full py-8 px-4">
+      </section>
+      <div className="w-full py-16 px-4">
         <ContactSection />
       </div>
     </main>

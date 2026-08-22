@@ -127,7 +127,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.youtube.com" />
       </head>
       <body
-        className={`${inter.className} max-w-4xl flex flex-col mx-auto gap-2 pb-32 md:pb-24`}
+        className={`${inter.className} max-w-7xl flex flex-col mx-auto gap-2 pb-32 md:pb-24`}
       >
         <Header />
         {/* Disabled current player - keeping for reference */}

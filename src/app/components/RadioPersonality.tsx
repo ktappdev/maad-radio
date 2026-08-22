@@ -83,15 +83,15 @@ const RadioPersonality = ({
           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#FD7B2B]/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#FF8C42]/10 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
 
-          <div className="relative z-10 text-justify leading-relaxed">
+          <div className="relative z-10 text-left leading-relaxed">
             {/* First Image - Enhanced */}
-            <div className="float-left mr-6 mb-6 group">
+            <div className="float-none w-full mb-6 group md:float-left md:w-auto md:mr-6 md:mb-6">
               <Image
                 src={imageSrc}
                 alt={title}
                 width={250}
                 height={250}
-                className="object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
+                className="w-full h-auto md:w-64 object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#FD7B2B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
@@ -118,17 +118,17 @@ const RadioPersonality = ({
                             : "opacity-0 translate-y-8"
                         }`}
                       >
-                        <div className="float-right ml-6 mb-6 group">
+                        <div className="float-none w-full mb-6 group md:float-right md:w-auto md:ml-6 md:mb-6">
                           <Image
                             src={image2Src}
                             alt={`${title} - ${host}`}
                             width={320}
                             height={320}
-                            className="object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
+                            className="w-full h-auto md:w-80 object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
                           />
                           <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#FF8C42]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <p className="mb-6 text-justify">{paragraph}</p>
+                        <p className="mb-6 text-left">{paragraph}</p>
                       </div>
                     );
                   }
@@ -146,24 +146,24 @@ const RadioPersonality = ({
                             : "opacity-0 translate-y-8"
                         }`}
                       >
-                        <div className="float-left mr-6 mb-6 group">
+                        <div className="float-none w-full mb-6 group md:float-left md:w-auto md:mr-6 md:mb-6">
                           <Image
                             src={image3Src}
                             alt={`${title} - ${host}`}
                             width={280}
                             height={280}
-                            className="object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
+                            className="w-full h-auto md:w-72 object-cover rounded-2xl shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:scale-[1.02]"
                           />
                           <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#FD7B2B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <p className="mb-6 text-justify">{paragraph}</p>
+                        <p className="mb-6 text-left">{paragraph}</p>
                       </div>
                     );
                   }
                   return (
                     <p
                       key={index}
-                      className={`mb-6 text-justify transition-all duration-700 ${
+                      className={`mb-6 text-left transition-all duration-700 ${
                         isVisible
                           ? "opacity-100 translate-y-0"
                           : "opacity-0 translate-y-8"

@@ -7,6 +7,8 @@ const BannerImage = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    // ponytail: parallax gated to hover-capable (desktop) devices — scroll setState janks mobile
+    if (!window.matchMedia("(hover: hover)").matches) return;
     const handleScroll = () => {
       if (!containerRef.current) {
         return;

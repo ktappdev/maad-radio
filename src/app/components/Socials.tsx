@@ -47,7 +47,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <div id="contact" className="grid grid-cols-3 gap-8 p-6 bg-[#333336] rounded-lg shadow-lg">
+    <div id="contact" className="grid grid-cols-4 sm:grid-cols-7 gap-8 p-6 glass-dark rounded-2xl border border-white/5 shadow-lg">
       {socialHandles.map((social) => (
         <Link
           key={social.name}
