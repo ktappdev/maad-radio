@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 const PAGE_ID = "maad975";
 
 type FacebookLiveVideo = {
+  id?: string;
   status?: string;
   embed_html?: string;
   permalink_url?: string;
@@ -65,25 +66,35 @@ export async function GET() {
     const videos = Array.isArray(data.data) ? data.data : [];
 
     console.log(
-      "[live-video] Facebook Graph success, videos found:",
-      videos.length
+      "[live-video] Facebook Graph videos:",
+      videos.map(({ id, status, embed_html }) => ({
+        id,
+        status,
+        embed_html_length: embed_html?.length ?? 0,
+      }))
     );
 
+    // Facebook's current live status enum is LIVE_NOW; LIVE is legacy.
     const candidate = videos.find(
-      (video) =>
-        (video.status === "LIVE" || video.status === "LIVE_NOW") &&
-        typeof video.embed_html === "string" &&
-        video.embed_html.trim().length > 0 &&
-        video.embed_html.includes("<iframe")
+      (video) => video.status === "LIVE_NOW" || video.status === "LIVE"
     );
 
-    if (!candidate?.embed_html) {
+    if (!candidate) {
       return NextResponse.json({ live: false });
     }
 
+    const embedHtml =
+      typeof candidate.embed_html === "string" &&
+      candidate.embed_html.trim().length > 0 &&
+      candidate.embed_html.includes("<iframe")
+        ? candidate.embed_html
+        : candidate.permalink_url
+          ? `<iframe title="Maad 97.5 FM live video" src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(candidate.permalink_url)}&show_text=false&autoplay=true"></iframe>`
+          : undefined;
+
     return NextResponse.json({
       live: true,
-      embedHtml: candidate.embed_html,
+      embedHtml,
       videoUrl: candidate.permalink_url,
     });
   } catch {
