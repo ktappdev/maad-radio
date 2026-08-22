@@ -1,6 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+
+type LiveVideoResponse = {
+  live?: boolean;
+  embedHtml?: string;
+  videoUrl?: string;
+};
+
 const GetLiveVideo = () => {
   // const [iframeHTML, setIframeHTML] = useState("");
   const [isLive, setIsLive] = useState(false);
@@ -16,32 +23,24 @@ const GetLiveVideo = () => {
         setIsLoading(true);
         setError(null);
         const res = await fetch("/api/live-video", { cache: "no-store" });
-        const data = await res.json();
-        const first = data?.data?.[0];
-        const isCurrentlyLive =
-          first &&
-          (first.status === "LIVE" || first.status === "LIVE_NOW") &&
-          first.embed_html;
+        if (!res.ok) {
+          throw new Error(`Live video request failed: ${res.status}`);
+        }
+        const data = (await res.json()) as LiveVideoResponse;
+        const embedHtml =
+          data.live === true && typeof data.embedHtml === "string"
+            ? data.embedHtml
+            : "";
+        const isCurrentlyLive = embedHtml.includes("<iframe");
+
+        setIsLive(isCurrentlyLive);
+        setVideoLink(data.videoUrl ?? "");
 
         if (isCurrentlyLive) {
-          setIsLive(true);
-          const iframe = first.embed_html.replace(/&amp;/g, "&");
+          const iframe = embedHtml.replace(/&amp;/g, "&");
           const srcMatch = iframe.match(/src="([^"]+)"/);
-          const nextEmbedUrl = srcMatch?.[1]?.replace(/`/g, "") ?? "";
-          setEmbedUrl(nextEmbedUrl);
-          if (nextEmbedUrl) {
-            try {
-              const parsed = new URL(nextEmbedUrl);
-              const href = parsed.searchParams.get("href");
-              if (href) {
-                setVideoLink(decodeURIComponent(href));
-              }
-            } catch (parseError) {
-              setVideoLink("");
-            }
-          }
+          setEmbedUrl(srcMatch?.[1]?.replace(/`/g, "") ?? "");
         } else {
-          setIsLive(false);
           setEmbedUrl("");
         }
       } catch (error) {
