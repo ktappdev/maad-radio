@@ -56,7 +56,7 @@ const RadioPersonality = ({
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
         <div className="text-center mb-12 space-y-6">
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text mb-4 tracking-wide text-shadow">
+          <div className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text mb-4 tracking-tight">
             {title}
           </div>
           <div

@@ -122,7 +122,7 @@ export default function Home() {
       <section id="about" className="w-full">
         <div className="glass-dark rounded-3xl px-8 md:px-12 py-16 border border-white/5">
           <div className="flex flex-col items-center text-center space-y-6">
-            <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text tracking-wide">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text tracking-tight">
               About Us
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] rounded-full"></div>
@@ -168,7 +168,7 @@ export default function Home() {
 
         <div className="relative z-10">
           <div className="flex flex-col w-full justify-center items-center text-white mb-12 space-y-6">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text tracking-wide">
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text tracking-tight">
               Contact Us
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] rounded-full"></div>

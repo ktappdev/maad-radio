@@ -68,7 +68,7 @@ const BannerImage = () => {
 
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center space-y-6 px-6 max-w-4xl">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white text-shadow leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
             <span className="block">Welcome to</span>
             <span className="block text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text">
               MAAD 97.5 FM

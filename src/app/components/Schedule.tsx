@@ -87,7 +87,7 @@ const Schedule = () => {
       <div className="text-center mb-12">
         <h2
           id="schedule"
-          className="font-bold text-4xl sm:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text mb-4 tracking-wide text-shadow"
+          className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-[#FD7B2B] to-[#FF8C42] bg-clip-text mb-4 tracking-tight"
         >
           FEATURED SHOWS
         </h2>

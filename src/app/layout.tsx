@@ -1,11 +1,16 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import Header from "./components/Header";
 import BottomPlayer from "./components/BottomPlayer";
 import { Suspense } from "react";
 import LoadingSpinner from "./components/LoadingSpinner";
 const inter = Inter({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-display",
+});
 
 const domain = process.env.NEXT_PUBLIC_DOMAIN || "https://www.maad97.com";
 
@@ -127,7 +132,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.youtube.com" />
       </head>
       <body
-        className={`${inter.className} max-w-7xl flex flex-col mx-auto gap-2 pb-32 md:pb-24`}
+        className={`${inter.className} ${spaceGrotesk.variable} max-w-7xl flex flex-col mx-auto gap-2 pb-32 md:pb-24`}
       >
         <Header />
         {/* Disabled current player - keeping for reference */}
