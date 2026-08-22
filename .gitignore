@@ -38,3 +38,8 @@ next-env.d.ts
 *.contexting*
 context.json
 context.toml
+/.avante_chat_history
+/.letta
+/.picode
+/.thread
+/.sidecar
