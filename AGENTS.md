@@ -20,14 +20,14 @@ Next.js 13 App Router site for Guyana's Maad 97.5 FM radio station. Live audio s
 ## Env & Config
 
 - `.env.example` documents only `NEXT_PUBLIC_DOMAIN`; the vars below are used in code but missing from it — add them when setting up env
-- `FACEBOOK_ACCESS_TOKEN` (server) or `NEXT_PUBLIC_FACEBOOK_ACCESS_TOKEN` — Facebook Graph `v24.0` live video; missing token → 500 from `/api/live-video`
+- `FACEBOOK_ACCESS_TOKEN` (server) or `NEXT_PUBLIC_FACEBOOK_ACCESS_TOKEN` — Facebook Graph `v24.0` live video; use never-expiring Page token; missing token → 500 from `/api/live-video`
 - EmailJS keys for `ContactUs.jsx` (client-side)
 - `next.config.js` — `images.domains` allowlist + security headers (`X-Frame-Options: DENY`, etc.); update allowlist when adding image hosts
 
 ## Gotchas
 
 - `pnpm-lock.yaml` + `bun.lockb` both present; prefer `pnpm` for installs
-- Live video polls `/api/live-video` every 30s; `GetLiveVideo.tsx` checks `status === LIVE|LIVE_NOW` + `embed_html` — non-live state shows static message, not embed
+- Live video flow: `/api/live-video` calls Facebook Graph `v24.0`; `GetLiveVideo.tsx` polls every 30s and shows the embed when live, otherwise static "We're not live right now" message. Facebook returns empty `embed_html` unless `embeddable=true` is POSTed to the broadcast; select by status first, then construct an iframe from `permalink_url` when needed. Status enum has `LIVE_NOW` (not `LIVE`); `LIVE` check remains defensive legacy code. Route logs each video’s `id`, `status`, and `embed_html_length` for diagnosis.
 - Audio stream `https://streaming.broadcastradio.com/brutal`; `BottomPlayer` is active player, `Player.tsx` is legacy/disabled — don't re-enable both
 - `BottomPlayer` detects current show from `src/app/lib/programs.ts` every 10s; volume in `localStorage`
 - Generated/ignored: `.next/`, `tsconfig.tsbuildinfo`, `context.json`/`context.toml` (from `contexting` tool) — don't hand-edit
