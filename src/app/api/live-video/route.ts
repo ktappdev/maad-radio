@@ -88,9 +88,11 @@ export async function GET() {
       candidate.embed_html.trim().length > 0 &&
       candidate.embed_html.includes("<iframe")
         ? candidate.embed_html
-        : candidate.permalink_url
-          ? `<iframe title="Maad 97.5 FM live video" src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(candidate.permalink_url)}&show_text=false&autoplay=true"></iframe>`
-          : undefined;
+        : "";
+
+    if (!embedHtml) {
+      return NextResponse.json({ live: false });
+    }
 
     return NextResponse.json({
       live: true,

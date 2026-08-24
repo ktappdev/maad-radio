@@ -31,7 +31,7 @@ const GetLiveVideo = () => {
           data.live === true && typeof data.embedHtml === "string"
             ? data.embedHtml
             : "";
-        const isCurrentlyLive = embedHtml.includes("<iframe");
+        const isCurrentlyLive = data.live === true && embedHtml !== "";
 
         setIsLive(isCurrentlyLive);
         setVideoLink(data.videoUrl ?? "");
