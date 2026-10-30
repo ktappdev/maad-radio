@@ -74,7 +74,7 @@ const GetLiveVideo = () => {
         <div className="glass-dark rounded-xl border border-white/5 px-6 py-4 text-center flex items-center justify-center gap-3">
           <span className="w-2 h-2 rounded-full bg-gray-400 animate-pulse flex-shrink-0" />
           <span className="text-sm text-[#FD7B2B] font-medium">
-            We&apos;re not live right now — check back soon.
+            Live video isn&apos;t available right now — check back soon.
           </span>
         </div>
       )}
