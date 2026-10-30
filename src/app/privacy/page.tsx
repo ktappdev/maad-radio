@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "../lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy - Maad 97.5 FM",
   description:
     "Privacy Policy for Maad 97.5 FM. Learn how we collect, use, and protect your information when you visit our website or use our services.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN || "https://www.maad97.com"),
-  alternates: {
-    canonical: "/privacy",
-  },
-  openGraph: {
-    title: "Privacy Policy - Maad 97.5 FM",
-    description:
-      "Privacy Policy for Maad 97.5 FM. Learn how we collect, use, and protect your information.",
-  },
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPolicy() {
   return (

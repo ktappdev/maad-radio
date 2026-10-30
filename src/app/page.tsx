@@ -6,6 +6,7 @@ import ContactSection from "./components/Socials";
 import Schedule from "./components/Schedule";
 import Youtube from "./components/Youtube";
 import GetLiveVideo from "./components/GetLiveVideo";
+import ListenInGuyana from "./components/ListenInGuyana";
 import { ContactUs } from "./components/ContactUs";
 import Image from "next/image";
 
@@ -71,7 +72,7 @@ export default function Home() {
 
         {/* Enhanced Banner with Fade Transition */}
         <div className="text-center space-y-4">
-          <h1 className="sr-only">MAAD 97.5 FM - Guyana&apos;s Top Radio Station</h1>
+          <h1 className="sr-only">MAAD 97.5 FM - Guyana&apos;s Radio Station, Live from Georgetown</h1>
           <div className="transition-transform duration-300 hover:scale-[1.01]">
             <Banner text="MAAD 97.5 FM" text2="" />
           </div>
@@ -147,6 +148,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ListenInGuyana />
 
       <section id="schedule" className="w-full">
         <h2 className="sr-only">Program Schedule</h2>

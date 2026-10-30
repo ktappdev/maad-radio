@@ -1,30 +1,34 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
 # AI Bots
 User-agent: GPTBot
 Allow: /
+Disallow: /api/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /api/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /api/
 
 User-agent: CCBot
 Allow: /
+Disallow: /api/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /api/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
 
 User-agent: Bytespider
 Allow: /
-
-# Block API routes from indexing
-User-agent: *
 Disallow: /api/
 
 Sitemap: https://www.maad97.com/sitemap.xml
