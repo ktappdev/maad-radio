@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 
+// Without this, Next can prerender the route at build time and Vercel serves the
+// build-time `{"live":false}` as a static file instead of asking Facebook.
+export const dynamic = "force-dynamic";
+
 const PAGE_ID = "maad975";
 
 type FacebookLiveVideo = {
