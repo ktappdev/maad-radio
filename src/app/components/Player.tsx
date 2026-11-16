@@ -117,7 +117,7 @@ const Schedule: React.FC = () => {
         </div>
         <div className="w-full space-y-4">
           <ReactAudioPlayer
-            src={"https://streaming.broadcastradio.com/brutal"}
+            src={"https://fire.doscast.com/8114/stream"}
             autoPlay={false}
             controls
             volume={volume}

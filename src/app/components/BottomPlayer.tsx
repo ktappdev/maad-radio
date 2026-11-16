@@ -254,7 +254,7 @@ const BottomPlayer: React.FC = () => {
       {/* Audio Element */}
       <audio
         ref={audioRef}
-        src="https://streaming.broadcastradio.com/brutal"
+        src="https://fire.doscast.com/8114/stream"
         preload="metadata"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
